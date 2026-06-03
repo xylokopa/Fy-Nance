@@ -1,4 +1,4 @@
-# Fy-Nance_01.py 02-06-2026 Projekt Ticker-Oszillograph
+# Fy-Nance_01.py 02-06-2026 Prototyp Ticker-Oszillograph
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
