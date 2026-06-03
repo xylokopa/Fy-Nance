@@ -7,7 +7,7 @@ import matplotlib.ticker as mticker
 from matplotlib.widgets import Slider, Button, TextBox
 import os
 # ==============================================================================
-#     01    ZENTRALES REGISTER DER GLOBALEN VARIABLEN
+#     01    GLOBALEN VARIABLEN
 # ==============================================================================
 # Hier sitzen die 8 Haupt-Steuerleitungen gut sichtbar direkt unter den Imports.
 # In den Funktionen darunter wird nur noch gelesen oder gezielt zugegriffen.
@@ -16,19 +16,18 @@ clr_schalter_val    = 1            # Default 1 = FEST(Zoom behalten), 0 = VAR (R
 akt_index       = 2                # Default-Ticker (Standard: 2 = Apple)
 yfNAME = "AAPL"                    # Default-Ticker für den Online-Start
 offlinecsv = "02Apple_Offline.csv" # Default-Ticker für den Offline-Start
-trigger = False                    # start-stop Schaubild-zeichnen
+trigger = False                    # start-stop zum Schaubild-zeichnen
 ANF_DATUM = "2015-01-02"           # Default-Fenster ANF
 END_DATUM = "2026-06-02"           # Default-Fenster END
 # ==============================================================================
-df = pd.DataFrame()         # Das zentrale DataFrame
+df = pd.DataFrame()                # globales DataFrame
 # ------------------------------------------------------------------------------
 #     02 Ticker-Liste aus CSV-Liste laden
 # ------------------------------------------------------------------------------
-# Falls Datei nicht existiert, Fallback ticker_liste
 try:
     ticker_df = pd.read_csv('Ticker-Liste.csv')
 except FileNotFoundError:
-    # Default In-Script-Ticker-Liste falls Ticker-Liste.csv fehlt
+    # Default Liste falls Ticker-Liste.csv fehlt
     ticker_liste = """Num,Nam,Tik
 00,Allianz,ALV.DE
 01,Alstom,AOMD.DE
@@ -66,7 +65,7 @@ except FileNotFoundError:
 def lade_ticker_daten(num_str, name, ticker_str):
     global df   # 1.globale Variable 
     csv_name = f"{num_str}{name}_Offline.csv"
-    # Online-Download yfinance df_live 1.Spalte datum von start bis end  2.Spalte Preise
+    # Download df_live mit 1.Spalte datum (von start bis end) und 2.Spalte Preis
     if online_schalter_val > 0:
         try:
             print(f"Lade {ticker_str} live von Yahoo Finance...")
@@ -75,22 +74,22 @@ def lade_ticker_daten(num_str, name, ticker_str):
             df_csv = df_live.rename(columns={"Close": "Price"}).dropna().reset_index()
             df_csv['Date'] = pd.to_datetime(df_csv['Date'])
             df_csv.to_csv(csv_name, index=False)
-            print(f"-> Erfolgreich live geladen und gepuffert in {csv_name}")
+            print(f"-> live geladen und in {csv_name} gepuffert")
             df = df_csv.sort_values('Date').reset_index(drop=True)
             return
         except Exception as e:
-            print(f"Online-Laden für {ticker_str} fehlgeschlagen ({e}). Nutze Offline-Fallback!")
-    # Offline-csv df_csv 1.Spalte datum von start bis end  2.Spalte Preise
+            print(f"{ticker_str} Download gescheitert ({e}) => Offline-csv")
+    # Offline-csv df_csv mit 1.Spalte datum (von start bis end) und 2.Spalte Preis
     if os.path.exists(csv_name):
-        print(f"Lese lokale csv {csv_name} ein...")
+        print(f"lokale csv {csv_name} wird geladen...")
         df_csv = pd.read_csv(csv_name)
         df_csv['Date'] = pd.to_datetime(df_csv['Date'])
         df = df_csv.sort_values('Date').reset_index(drop=True)
     else:
-        print(f"WARNUNG: Keine Offline-csv {csv_name} gefunden! Leeres Frame als Ersatz.")
+        print(f"Offline-csv {csv_name} nicht gefunden! Leeres Frame als Ersatz.")
         df = pd.DataFrame(columns=['Date', 'Price'])
 # ------------------------------------------------------------------------------
-#     04  Default-Ticker Applefür erstes Schaubild 
+#     04  Default-Ticker Apple für erstes Schaubild 
 # ------------------------------------------------------------------------------
 akt_ticker = ticker_df.iloc[akt_index] # Zeilenwahl in Ticker-Liste = integer location 
 lade_ticker_daten(f"{akt_ticker['Num']:02d}", akt_ticker['Nam'], akt_ticker['Tik'])
@@ -100,9 +99,9 @@ lade_ticker_daten(f"{akt_ticker['Num']:02d}", akt_ticker['Nam'], akt_ticker['Tik
 # ------------------------------------------------------------------------------
 fig, ax = plt.subplots(figsize=(12, 8))
 fig.canvas.manager.set_window_title('Figur 0 - Ticker Oszillograph')
-# Plot-Bereich plt Links 19% frei für Liste darunter 22% für Widgets 
+# Plot-Bereich plt Links 19% frei für Liste darunter 24% für Widgets 
 plt.subplots_adjust(left=0.19, bottom=0.24, right=0.92)
-# Schaulinie x=df([date]) y=df['Price'] mit Beschriftungen
+# Schaubild x=df([date]) y=df['Price'] mit Beschriftungen
 line, = ax.plot(df['Date'], df['Price'], label='preis', color='blue')
 ax.set_ylabel('Preis in €')
 ax.grid(True, linestyle='--')
@@ -111,7 +110,7 @@ ax.legend(loc='upper left')
 trigger = False
 
 # ------------------------------------------------------------------------------
-#     06        Achsen und Anheftungspunkte für Widgets plazieren 
+#     06        Achsen und Anheftungspunkte für Widgets platzieren 
 # ------------------------------------------------------------------------------
 ax_von = plt.axes([0.21, 0.07, 0.22, 0.03])       # Anheftung von-Slider
 ax_online = plt.axes([0.47, 0.062, 0.06, 0.05])   # Anheftung ONLINE-OFFLINE-Schalter
@@ -138,7 +137,7 @@ for i in range(anzahl_ticker):
     zeil = ticker_df.iloc[i]
     num_str = f"{zeil['Num']:02d}"
     btn_label = f"{num_str} {zeil['Nam']}"
-    # Tasten-Anheftung iterativ von oben nach unten (0.95 bis 0.02) plaziert
+    # Tasten-Anheftung iterativ von oben nach unten (0.95 bis 0.02) platziert
     y_pos = 0.95 - (i * 0.033)
     ax_tick = plt.axes([0.02, y_pos, 0.12, 0.028])
     
@@ -152,7 +151,7 @@ for i in range(anzahl_ticker):
     schalter_handles.append(btn) # Schutz gegen Pythons Garbage Collector
 
 # ------------------------------------------------------------------------------
-#     08                     Widgets plazieren 
+#     08                     Widgets platzieren 
 # ------------------------------------------------------------------------------
 
 slider_von = Slider(ax_von, 'von', 0, len(df)-1, valinit=0, valfmt='%0.0f')
@@ -162,13 +161,13 @@ btn_online = Button(ax_online, 'ONLINE' if online_schalter_val else 'OFFLINE', c
 text_box_start = TextBox(ax_box_start, '', initial='')
 text_box_end   = TextBox(ax_box_end, '', initial='')
 
-# CLR-Schalter direkt unter Online-Schalter einstellen
-# Variable für den CLR-Zustand (1 = FEST / Zoom behalten, 0 = RESET / Vollansicht)
+# CLR-Schalter direkt unter Online-Schalter 
+# Variable für CLR-Zustand (1 = FEST / Zoom behalten, 0 = RESET / Vollansicht)
 clr_schalter_val = 1 
 btn_clr = Button(ax_clr, 'Zeitfenster : FEST', color='lime')
 btn_clr.label.set_fontsize(10)
 
-# --- PLATZIERUNG DER DIAGNOSE-BUTTONS  ---
+# --- PLATZIERUNG DIAGNOSE-BUTTONS  ---
 btn_diag1 = Button(ax_diag1, 'DIAGNOSE 1', color='#d3d3d3')
 btn_diag2 = Button(ax_diag2, 'DIAGNOSE 2 [X]', color='#e0e0e0')
 btn_diag3 = Button(ax_diag3, 'DIAGNOSE 3 [X]', color='#e0e0e0')
@@ -187,7 +186,7 @@ def axen_skalierung(target_ax, dt_start, dt_end):
     target_ax.xaxis.set_major_locator(mdates.YearLocator())
     target_ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
     
-    if tage_fenster < 730:  # wegen Monats-Markierungen
+    if tage_fenster < 730:  # => Monats-Markierungen
         target_ax.xaxis.set_minor_locator(mdates.MonthLocator())
         target_ax.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
         target_ax.grid(True, which='both', linestyle='--', alpha=0.5)
@@ -208,7 +207,7 @@ def von_bis_ablesen():
     if df_zeitfenster.empty:
         return None, "", ""
         
-    # Nachbesserung für Zugriff über .values und Umwandlung in sichere Timestamps
+    # Zugriff über .values und Umwandlung in sichere Timestamps
     dt_start = pd.Timestamp(df_zeitfenster['Date'].values[0])
     dt_end = pd.Timestamp(df_zeitfenster['Date'].values[-1])
     
@@ -233,16 +232,17 @@ def neu_zeichnen(idx_von, idx_bis):
 
     df_zeitfenster = df.iloc[idx_von:idx_bis+1]
     if not df_zeitfenster.empty:
-        # index [0] zeigt auf erste Element des Arrays!
+        # index [0] zeigt auf erstes Datum 
         dt_start = pd.Timestamp(df_zeitfenster['Date'].values[0])
-        # index [-1] zeigt auf letztes Element des Arrays!        
+        # index [-1] zeigt auf letztes Datum         
         dt_end = pd.Timestamp(df_zeitfenster['Date'].values[-1])
         
         str_start = dt_start.strftime('%Y-%m-%d')
         str_end = dt_end.strftime('%Y-%m-%d')
         tage_differenz = (dt_end - dt_start).days
-        
+        # x-Skala von-bis
         ax.set_xlim(dt_start, dt_end)
+        # y-Skala von-bis
         ax.set_ylim(df_zeitfenster['Price'].min() * 0.95, df_zeitfenster['Price'].max() * 1.05)
         
         axen_skalierung(ax, dt_start, dt_end)
@@ -276,23 +276,23 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 btn_obj.ax.set_facecolor('#e1e1e1')        
         akt_index = button_index
 
-        # 2. Alte Zoom-Grenzen sichern
+        # 2. Alte Zeitfenster sichern
         idx_von_alt = int(slider_von.val)
         idx_bis_alt = int(slider_bis.val)
 
         # 3. Neuen Ticker laden
         lade_ticker_daten(num_str, name, ticker_str)
         if not df.empty:
-            # Maximale Grenzen des neuen Tickers ermitteln
+            # Max. Grenzen des neuen Tickers ermitteln
             max_index_neu = len(df) - 1
             
-            # Die neuen Slider-Maximalgrenzen im GUI anpassen
+            # neue Slider-Maximalgrenzen anpassen
             slider_von.valmax = max_index_neu
             slider_bis.valmax = max_index_neu
             
             line.set_data(df['Date'], df['Price'])
             # -------------------------------------
-            # Prüfen, ob der alte Zoom überhaupt in die neue Aktie hineinpasst!
+            # Prüfen, ob das alte Zeitfenster zur neuen Aktie passt
             # -------------------------------------
             if clr_schalter_val == 1 and idx_bis_alt <= max_index_neu:
                 # -------------------------------------
@@ -330,7 +330,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 text_box_end.set_val(str_end_full)
                 
                 neu_zeichnen(0, max_index_neu)
-                print("-> Zeitfenster auf Vollansicht gesetzt (VAR).")
+                print("-> Zeitfenster auf Vollansicht (VAR).")
                 
     return callback
 
@@ -360,7 +360,7 @@ def on_clr_clicked(event):
     fig.canvas.draw_idle()
 
 btn_clr.on_clicked(on_clr_clicked)   # clr-Schalter abrufen
-schalter_handles.append(btn_clr)     # in aktive schalter einreihen
+schalter_handles.append(btn_clr)     # in aktive handles-Liste eintragen
 
 # ------------------------------------------------------------------------------
 #     15              Funktionalität des ONLINE-Schalters
@@ -409,7 +409,7 @@ def on_diag1_clicked(event):
     ax1.set_ylabel('Preis in €')
     ax1.legend(loc='upper left')
     
-    # Timestamp-Werte direkt aus dem zeitfenster abholen
+    # Timestamp-Wert direkt im Zeitfenster abholen
     dt_start_gesichert= pd.Timestamp(df_zeitfenster['Date'].values[0])
     dt_end_gesichert = pd.Timestamp(df_zeitfenster['Date'].values[-1])
     axen_skalierung(ax1, dt_start_gesichert, dt_end_gesichert)
@@ -424,9 +424,9 @@ def on_diag2_clicked(event):
     df_zeitfenster, str_start, str_end = von_bis_ablesen()
     fig2, ax2 = plt.subplots(figsize=(9, 5.5))
     fig2.canvas.manager.set_window_title('Figur 2 - PLatzhalter 1')
-    ax2.text(0.5, 0.5, 'für weitere Auswertungsverfahren:\n\n[ DIAGNOSE 2 BLIND ]\n\nkann nachgerüstet werden.', 
+    ax2.text(0.5, 0.5, 'weiteres Auswertungsverfahren:\n\n[ DIAGNOSE 2 LEER ]\n\nkann nachgetragen werden.', 
              ha='center', va='center', fontsize=12, color='red', weight='bold', bbox=dict(facecolor='yellow', alpha=0.3))
-    ax2.set_title(f"fig2 zB. Intervall-Analyse: {str_start} bis {str_end}")
+    ax2.set_title(f"fig2 noch ohne Titel: {str_start} bis {str_end}")
     fig2.canvas.draw()
     plt.show()
 # ------------------------------------------------------------------------------
@@ -436,9 +436,9 @@ def on_diag3_clicked(event):
     df_zeitfenster, str_start, str_end = von_bis_ablesen()
     fig3, ax3 = plt.subplots(figsize=(9, 5.5))
     fig3.canvas.manager.set_window_title('Figur 3 - Platzhalter 2')
-    ax3.text(0.5, 0.5, 'für weitere Auswertungsverfahren:\n\n[ DIAGNOSE 3 BLIND ]\n\nkann nachgerüstet werden.', 
+    ax3.text(0.5, 0.5, 'weiteres Auswertungsverfahren:\n\n[ DIAGNOSE 3 LEER ]\n\nkann nachgetragen werden.', 
              ha='center', va='center', fontsize=12, color='gray', weight='bold')
-    ax3.set_title(f"fig3 zB. Trend-Oszillator: {str_start} bis {str_end}")
+    ax3.set_title(f"fig3 noch ohne Titel: {str_start} bis {str_end}")
     fig3.canvas.draw()
     plt.show()
 # ------------------------------------------------------------------------------
@@ -448,9 +448,9 @@ def on_diag4_clicked(event):
     df_zeitfenster, str_start, str_end = von_bis_ablesen()
     fig4, ax4 = plt.subplots(figsize=(9, 5.5))
     fig4.canvas.manager.set_window_title('Figur 4 - Platzhalter 3')
-    ax4.text(0.5, 0.5, 'für weitere Auswertungsverfahren:\n\n[ DIAGNOSE 4 BLIND ]\n\nkann nachgerüstet werden.', 
+    ax4.text(0.5, 0.5, 'weiteres Auswertungsverfahren:\n\n[ DIAGNOSE 4 LEER ]\n\nkann nachgetragen werden.', 
              ha='center', va='center', fontsize=12, color='gray', style='italic')
-    ax4.set_title(f"fig4 zB. Resilienz-Display: {str_start} bis {str_end}")
+    ax4.set_title(f"fig4 noch ohne Titel: {str_start} bis {str_end}")
     fig4.canvas.draw()
     plt.show()
 
@@ -459,7 +459,7 @@ btn_diag2.on_clicked(on_diag2_clicked)
 btn_diag3.on_clicked(on_diag3_clicked)
 btn_diag4.on_clicked(on_diag4_clicked)
 # ---------------------------------------------------------------------------------
-#     20  Huckepack-Aufruf der beiden Slider um bei Bewegung plot neu zu zeichnen
+#     20  Huckepack-Aufruf der beiden Slider um beim Schieben plot neu zu zeichnen
 # ---------------------------------------------------------------------------------
 slider_von.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
 slider_bis.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
