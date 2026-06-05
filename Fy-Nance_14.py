@@ -19,8 +19,10 @@ akt_index       = 2                # Default-Ticker (Standard: 2 = Apple)
 yfNAME = "AAPL"                    # Default-Ticker für den Online-Start
 offlinecsv = "02Apple_Offline.csv" # Default-Ticker für den Offline-Start
 trigger = False                    # start-stop zum Schaubild-zeichnen
-ANF_DATUM = "2020-01-02"           # Default-Fenster ANF
-END_DATUM = "2020-09-27"           # Default-Fenster END
+ANF_DATUM = "2015-01-05"           # MAX-Fenster ANF
+END_DATUM = "2026-06-05"           # MAX-Fenster END
+ANF_DATUM = "2020-01-05"           # CORONA-Fenster ANF
+END_DATUM = "2020-11-05"           # CORONA-Fenster END
 moving_size = 20                   # Moving-Average-Fenster
 # ==============================================================================
 df = pd.DataFrame()                # Projekt DataFrame
