@@ -1,4 +1,4 @@
-# Fy-Nance_14.py 05-06-2026 Projekt Ticker-Oszillograph
+# Fy-Nance_14.py 05-06-2026 Projekt Ticker-Oszillograph R.W_Guest_Nr_178854
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -248,11 +248,10 @@ def neu_zeichnen(idx_von, idx_bis):
     # --- Database-Erweiterungen Refresh ------------
     df['MA'] = df['Price'].rolling(window=moving_size).mean()
     df['Diff'] = df['Price'] - df['MA']
-    # -----------------------------------------------
     # ----------------------------------------------------------------------           
     # Erstes Fenster ax1 Ticker-Linie mit Mov'Average MA und Abweichg. dMA
     # ----------------------------------------------------------------------  
-    ax1.clear()   ###
+    ax1.clear()   # MAIN-WINDOW
     ax1.set_title(f"[2]Ticker:{akt_Num}/{akt_Nam}/{akt_Tik} von {idx_von} bis {idx_bis}",fontsize=12, fontweight='bold')
     fig1.canvas.manager.set_window_title('1.Fenster - Ticker Oszillograph')
     plt.subplots_adjust(left=0.20, bottom=0.24, right=0.92)
