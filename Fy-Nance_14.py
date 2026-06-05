@@ -1,4 +1,4 @@
-# Fy-Nance_14.py 03-06-2026 Projekt Ticker-Oszillograph
+# Fy-Nance_14.py 05-06-2026 Projekt Ticker-Oszillograph
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -641,7 +641,7 @@ text_box_start.on_submit(on_submit_start)   # Start-Datum abrufen
 text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen 
 
 # ------------------------------------------------------------------------------
-#     23 Ticker-Oszillograph starten/neu zeichnen und fig2,ax2 nachtragen
+#     23 Ticker-Oszillograph starten/neu zeichnen und fig123,ax123 refreshen
 # ------------------------------------------------------------------------------
 neu_zeichnen(0, len(df)-1)
 plt.show()
