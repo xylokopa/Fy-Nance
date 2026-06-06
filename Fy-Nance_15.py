@@ -147,18 +147,18 @@ btn_diag3 = Button(ax1_diag3, 'DIAGNOSE 3[X]', color='#e0e0e0')
 btn_diag4 = Button(ax1_diag4, 'DIAGNOSE 4[X]', color='#e0e0e0')
 
 # --- PLATZIERUNG BORD-COMPUTER / Funktionen noch nicht belegt ---
-#     Anheftung der 1-Schaltfeld
+#     Anheftung 1-Schaltfeld
 ax1_btn11 = plt.axes([0.840, 0.139, 0.04, 0.04])     
 ax1_btn12 = plt.axes([0.840, 0.096, 0.04, 0.04])
 ax1_btn13 = plt.axes([0.840, 0.053, 0.04, 0.04])
 ax1_btn14 = plt.axes([0.840, 0.010, 0.04, 0.04])
 # --- Belegung 1-SCHALTFELD ---      
 val_btn11 = 0
-wal_btn11 = Button(ax1_btn11, 'A11' if val_btn11 else 'a11', color='red' if val_btn11 else'#c4f5f6')
+wal_btn11 = Button(ax1_btn11, 'A11' if val_btn11 else 'a11', color='red' if val_btn11 else '#c4f5f6')
 wal_btn12 = Button(ax1_btn12, 'A12', color='#41e2c3')
 wal_btn13 = Button(ax1_btn13, 'A13', color='#61c2a3')
 wal_btn14 = Button(ax1_btn14, 'A14', color='#84a484')
-#     Belegung der 2-Schaltfeld
+#     Anheftung 2-Schaltfeld
 ax1_btn21 = plt.axes([0.885, 0.139, 0.04, 0.04])     
 ax1_btn22 = plt.axes([0.885, 0.096, 0.04, 0.04])
 ax1_btn23 = plt.axes([0.885, 0.053, 0.04, 0.04])
@@ -168,7 +168,7 @@ wal_btn21 = Button(ax1_btn21, 'B11', color='#c1c1c1')
 wal_btn22 = Button(ax1_btn22, 'B12', color='#d2d2d2')
 wal_btn23 = Button(ax1_btn23, 'B13', color='#e3e3e3')
 wal_btn24 = Button(ax1_btn24, 'B14', color='#f4f4f4')
-#     Anheftung der 3-Schaltfeld
+#     Anheftung 3-Schaltfeld
 ax1_btn31 = plt.axes([0.930, 0.139, 0.04, 0.04])     
 ax1_btn32 = plt.axes([0.930, 0.096, 0.04, 0.04])
 ax1_btn33 = plt.axes([0.930, 0.053, 0.04, 0.04])
@@ -178,16 +178,20 @@ wal_btn31 = Button(ax1_btn31, 'C11', color='#fafbfc')
 wal_btn32 = Button(ax1_btn32, 'C12', color='#d7e7f7')
 wal_btn33 = Button(ax1_btn33, 'C13', color='#b6c6d6')
 wal_btn34 = Button(ax1_btn34, 'C14', color='#95a5b5')
-# --- INIT-EVENT-mit-Überwachung ---
+# --- INIT-EVENT-mit-Überwachungstest für Schalter btn11 ---
 def on_wal_btn11_clicked(event):
-    wal_bt11n.color = red
-    #global wal_btn1_status
-    #wal_btn_status = - wal_btn_status
-    #if wal_btn_status == 1:
-    #    wal_bt11n.color = red
-    #else:
-    #    wal_bt11n.color = '#c4f5f6'
-    #return None
+    global val_btn11
+    if val_btn11==0: val_btn11 = 1
+    else: val_btn11 = 0
+    print('val_btn11=',val_btn11) 
+    if val_btn11:
+       wal_btn11.color = 'red'
+       wal_btn11.hovercolor = 'yellow'
+    else:
+        wal_btn11.color = '#c4f5f6'
+        wal_btn11.hovercolor = 'pink'        
+    plt.draw()
+cid_btn11 = wal_btn11.on_clicked(on_wal_btn11_clicked)    
 # ------------------------------------------------------------------------------
 #     08            Schalter-Widgets platzieren 
 # ------------------------------------------------------------------------------
