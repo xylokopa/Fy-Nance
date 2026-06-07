@@ -15,7 +15,7 @@ import os
 # In den Funktionen darunter wird nur noch gelesen oder gezielt zugegriffen.
 val_online = 0            # default 1 = Online live, 0 = Offline
 val_clr    = 1            # Default 1 = FEST(Zoom behalten), 0 = VAR (Reset)
-akt_index       = 2                # Default-Ticker (Standard: 2 = Apple)
+akt_index  = 2            # Default-Ticker (Standard: 2 = Apple)
 yfNAME = "AAPL"                    # Default-Ticker für den Online-Start
 offlinecsv = "02Apple_Offline.csv" # Default-Ticker für den Offline-Start
 trigger = False                    # start-stop zum Schaubild-zeichnen
@@ -28,7 +28,7 @@ preis_linie = 1  # Preis-Linie ein
 MAmiw_linie = 0  # MoveAverage aus
 FEmiw_linie = 0  # Fenster-MiW aus
 diffz_linie = 0  # PreisMA-Dif aus
-FFT_Diagram = 0  # Fourier-Spektrum(Log)
+FFT_Diagram = 0  # Fourier-Spektrum(Log) aus
 # ==============================================================================
 df = pd.DataFrame()                # Projekt DataFrame
 # ==============================================================================
