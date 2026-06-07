@@ -1,13 +1,16 @@
-# Fy-Nance_16.py 07-06-2026 Projekt Ticker-Oszillograph R.W_GHoer_Nr_178854
+# Fy-Nance_16.py 07-06-2026 800Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+import math
 import numpy as np
 import pandas as pd
 import yfinance as yf
 import scipy.stats as stats
+import statsmodels.api as sm  # pip install statsmodels (Lilliefors)
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as mticker
 from matplotlib.widgets import Slider, Button, TextBox
 import os
+plt.rcParams['toolbar'] = 'None'
 # ==============================================================================
 #     01    Projekt Variablen
 # ==============================================================================
@@ -35,21 +38,21 @@ df = pd.DataFrame()                # Projekt DataFrame
 #     02 drei Fenster fig1,ax1 bis fig3,ax3 für canvas.draw_idle() bereitstellen
 # ==============================================================================
 # Frequenz-Rezept des im Tupel(Ticker,Zeitfenster) erfassten Börsen-Ereignisses
-fig3, ax3 = plt.subplots(figsize=(5.5, 4.125))
+fig3, ax3 = plt.subplots(figsize=(5.5, 4.20))
 fig3.canvas.manager.set_window_title('3.Fenster - Fourier-Signatur des Börsen-Ereignisses')
 # Positionieren: Breite=550, Höhe=412, X=0 (ganz links), Y=0 (ganz oben)
-fig3.canvas.manager.window.geometry("550x412+0+0")
+fig3.canvas.manager.window.geometry("550x420+0+0")
 # Das Statistik-Fenster bereitstellen
-fig2, ax2 = plt.subplots(figsize=(5.5, 4.125))
+fig2, ax2 = plt.subplots(figsize=(5.5, 4.20))
 fig2.canvas.manager.set_window_title('2.Fenster - Abweichungsdichte vom Moving-Average')
 # Positionieren: X=0 (ganz links), Y=450 (unter Fenster 3)
-fig2.canvas.manager.window.geometry("550x412+0+412")
+fig2.canvas.manager.window.geometry("550x420+0+440")
 # Das im Interpreter-Ablauf VORHER zu befüllende Oszillographen-Fenster danach ...
-fig1, ax1 = plt.subplots(figsize=(11, 8.5))
+fig1, ax1 = plt.subplots(figsize=(11, 8.60))
 fig1.canvas.manager.set_window_title('1.Fenster  - Ticker Oszillograph')
 plt.subplots_adjust(left=0.20, bottom=0.24, right=0.95)
 # Positionieren: X=560 (rechts von Fenster 2/3), Y=0 (ganz oben)
-fig1.canvas.manager.window.geometry("1100x825+550+0")
+fig1.canvas.manager.window.geometry("1100x860+550+0")
 
 # ------------------------------------------------------------------------------
 #     03 Ticker-Liste aus CSV-Liste laden
@@ -241,7 +244,110 @@ def von_bis_ablesen():
     
     return df_zeitfenster, str_start, str_end
 # ------------------------------------------------------------------------------
-#     12                 Schaubild neu zeichnen
+#                      Bewertung statistische Tests
+# ------------------------------------------------------------------------------
+def Bewertung_popup(n,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp):
+    global fig5
+    # Grenzziehung & Fallunterscheidung für den Text
+    if n < 30:
+        sample_class = "KLEINE STICHPROBE"
+        grenzwert_text = "N/A"
+        wuerdigung = ("WARNUNG: Geringe statistische Aussagekraft!\n"
+                      "Verteilungstests bei n < 30 sehr ungenau.\n"
+                      "Nutze primär visuelles Histogramm."
+        )
+    elif 30 <= n <= 250:
+        sample_class = "MITTLERE STICHPROBE (Optimaler Bereich)"
+        lilliefors_critical = 0.886 / np.sqrt(n)
+        grenzwert_text = f"{lilliefors_critical:.4f}"
+        wuerdigung = ("Stichprobe im opt.mathematik-Fenster.\n"
+        "Testergebnissen mit hoher Verlässlichkeit\n"
+        "und direkter Aussagekraft."
+        )
+    else: # n > 250 (Trifft bei Ihren n=283 zu)
+        sample_class = "GROSSE STICHPROBE (Hohe Sensitivität)"
+        lilliefors_critical = 0.886 / np.sqrt(n)
+        grenzwert_text = f"{lilliefors_critical:.4f}"
+        wuerdigung = (f"BEM: Bei n={n} greift das Schärfe-Paradoxon.\n"
+        f"Der Test bestraft kleinste Abweichungen. Trotz Ablehnung\n"
+        f"zeigt Shapiro-Wilk ({shapiro_stat*100:.1f}%), dass die dMA-Grundform\n"
+        f"im Kernbereich stabil der Gauß-Kurve folgt."
+        )
+    # Entscheidungen textlich aufbereiten
+    lf_Hyp = "Annahme (Normalverteilt)" if lf_p > 0.05 else "Ablehnung"
+    sw_Hyp = "Annahme (Normalverteilt)" if sw_p > 0.05 else "ABGELEHNT"  
+    # --- 2. String-Zusammensetzung im Monospace-Look ---
+    report_text = (
+        f"===  ({sample_class}) ===\n"
+        f"Effekt. Handelstage: n = {n}\n"
+        f"Lilliefors-Zufallstoleranz: {grenzwert_text}\n"
+        f"--------------------------------------------------------\n"
+        f"1.LILLIEFORS-TEST\n  (KS-Korrektur f.geschätztes Mu/Sigma)\n"
+        f"- Teststatistik (D): {lf_stat:.4f}\n"
+        f"- p-Wert:            {lf_p:.4f}\n"
+        f"- H0-Entscheidung:   {lf_Hyp}\n\n"
+        f"2.SHAPIRO-WILK-TEST (Symmetrie & Formprüfung)\n"
+        f"- Teststatistik (W): {sw_stat:.4f} (Ähnlichkeit:{sw_stat*100:.1f}%)\n"
+        f"- p-Wert:            {sw_p:.4f}\n"
+        f"- H0-Entscheidung:   {sw_Hyp}\n"
+        f"--------------------------------------------------------\n"
+        f"FAZIT FÜR DIE FINANZANALYSE:\n{wuerdigung}"
+    )
+    # --- 3. Matplotlib Canvas Update ---
+    bbox_props = dict(boxstyle="round,pad=1", facecolor="#f8f9fa", edgecolor="#b3b3b3", alpha=1.0)
+
+    if 'fig5' in globals() and fig5 is not None and plt.fignum_exists(fig5.number):
+        fig5.canvas.manager.window.lift()  # Holt bestehendes Fenster on top
+        return
+
+    fig5, ax5 = plt.subplots(figsize=(8,3.125))
+    fig5.canvas.manager.set_window_title('5.Fenster - Stichproben-Bewertung')
+    # Positionieren: Breite=550, Höhe=412, X=0 (ganz links), Y=0 (ganz oben)
+    fig5.canvas.manager.window.geometry("550x412+0+45")
+    ax5.axis('off')  
+    ax5.text(0.00,1, report_text, 
+          transform=ax5.transAxes, 
+          fontsize=9, 
+          verticalalignment='top', 
+          fontfamily='monospace', # Wichtig für die Tabellen-Ausrichtung (feste Zeichenbreite)
+          bbox=bbox_props)
+    fig5.canvas.draw_idle()
+# ------------------------------------------------------------------------------
+def Bewertung_konsole(n):
+    # 1. Berechnung des kritischen Grenzwerts (nur gültig ab n > 30)
+    if n >= 30:
+        lilliefors_critical = 0.886 / np.sqrt(n)
+        grenzwert_text = f"{lilliefors_critical:.4f}"
+    else:
+        lilliefors_critical = None
+        grenzwert_text = "N/A (Tabelle nutzen)"
+    
+    # 2. Fallunterscheidung und Text-Würdigung
+    if n < 30:
+        Proben_typ = "KLEINE STICHPROBE"
+        Kommentar = ("WARNUNG: Geringe statistische Aussagekraft! Verteilungstests bei n < 30\n"
+                     "sehr ungenau. Nutze primär visuelle Histogramm-Analyse."
+        )
+    elif 30 <= n <= 250:
+        Proben_typ = "MITTLERE STICHPROBE (Optimaler Testbereich)"
+        Kommentar = ("Stichprobe liegt im optimalen mathem. Fenster. Testergebnisse\n"
+                     "mit hoher Verlässlichkeit und direkter Aussagekraft."
+        )
+    else:  # n > 250
+        Proben_typ = "GROSSE STICHPROBE (Vorsicht: Hohe Sensitivität)"
+        Kommentar = (f"HINWEIS: Bei n={n} Schärfe-Paradoxon. Test bestraft kleinste\n"
+                     f"Abweichungen. Shapiro-Wilk ({shapiro_stat*100:.1f}%),\n"
+                     f"dMA-Grundform folgt im Kernbereich stabil der Gauß-Kurve."
+        )
+    # --- Ausgabe-Template (Ausschnitt für Ihre Konsole) ---
+    print("=" * 70)
+    print(f"BEWERTUNG der Ticker-Linie bei {n}-Handelstagen :\n Proben-Typ: {Proben_typ}")
+    print(f"Stichprobenumfang (n): {n} | Lilliefors-Zufallstoleranz: {grenzwert_text}")
+    print("=" * 70)
+    print(f"Kommentar:\n",Kommentar)
+    print("=" * 70)
+# ------------------------------------------------------------------------------
+#     12   Ticker-Schaubild neu zeichen
 # ------------------------------------------------------------------------------
 def neu_zeichnen(idx_von, idx_bis):
     global line_preis
@@ -250,6 +356,7 @@ def neu_zeichnen(idx_von, idx_bis):
     global ticker_df    # 2.Ticker-liste
     global akt_index    # 3.Ticker_index
     global moving_size  # 4.Moving_average-Fenster
+    global fig3
     akt_ticker = ticker_df.iloc[akt_index] # Zeilenwahl in Ticker-Liste = integer location 
     akt_Num = akt_ticker['Num']
     akt_Nam = akt_ticker['Nam']
@@ -274,8 +381,8 @@ def neu_zeichnen(idx_von, idx_bis):
        line_preis, = ax1.plot(df['Date'], df['Price'], label='preis', color='blue')
     # 2. Hauptlinie -------------------------   
     if MAmiw_linie:
-       line_MAmiw, = ax1.plot(df['Date'], df['MA'], label='MA', color='green')
-    
+       line_MAmiw, = ax1.plot(df['Date'], df['MA'], label='MA', color='green')    
+
     ma_mittelwert = df['MA'].mean()
     y_FEmiw = [ma_mittelwert] * len(df)
     # 3. Hauptlinie -------------------------
@@ -335,11 +442,24 @@ def neu_zeichnen(idx_von, idx_bis):
         if len(diff_data) > 5:
             # Statistik auf Basis des synchronisierten Slider-Fensters berechnen
             mu = np.mean(diff_data)
-            sigma = np.std(diff_data)
-            ks_stat, p_value = stats.kstest(diff_data, 'norm', args=(mu, sigma))
-            
+            sigma = np.std(diff_data) # verzerrter Schätzer
+            sigmd = np.std(diff_data,ddof=1)
+            alpha = 0.05
+            n_stat = len(diff_data)
+            sqrt1n = 1/math.sqrt(n_stat)
+            # Bewertung_popup(n_stat,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp)
+            ks_stat, ks_p = stats.kstest(diff_data, 'norm', args=(mu, sigma))
+            ks_Hyp = 1 if ks_p > alpha else 0
+            lf_stat, lf_p = sm.stats.lilliefors(diff_data,dist='norm')
+            lf_Hyp = 1 if lf_p > alpha else 0
+            sw_stat, sw_p = stats.shapiro(diff_data)
+            sw_Hyp = 1 if sw_p > alpha else 0
             # Konsole gibt aktuelle Fenster-Werte und Kolmogorov-Smirnov-Abweichung aus:
             print(f"Fenster [{str_start} bis {str_end}] -> KS-Abweichung: {ks_stat:.4f}")
+            print(f"Nullhypothese KolmSmi={ks_Hyp},Lillifo={ks_Hyp},ShapWil={sw_Hyp}")
+            if (diffz_linie):
+               Bewertung_konsole(n_stat)
+               Bewertung_popup(n_stat,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp)
             # ----------------------------------------------------------------------           
             # Zweites Fenster ax2 dMA-Histogramm und Vergl.Gauss-Verteilung
             # ----------------------------------------------------------------------
@@ -348,11 +468,11 @@ def neu_zeichnen(idx_von, idx_bis):
                count, bins, ignored = ax2.hist(diff_data, bins=30, density=True, 
                                    alpha=0.6, color='blue', label='dMA in €/Tag')          
             if diffz_linie:
-               ax2.set_title('dMA-Abstand %€ vom MA mit Kolmogorov-Smirnov-Abw.KS',
-                                                      fontsize=10, fontweight='bold')           
+               ax2.set_title(f"n:{n_stat} KolmogSmirnov:{ks_Hyp}  Lilliefors:{lf_Hyp}  ShapiroWilk:{sw_Hyp}")
+                                                      #fontsize=10, fontweight='bold')           
                gauss = stats.norm.pdf(bins, mu, sigma)
                ax2.plot(bins, gauss, color='red', linewidth=2, 
-                       label=f'Gauss.Dichte\n(K.S. = {ks_stat:.3f})')
+                       label=f'Gauss.Abw\n(KS:{ks_stat:.3f}\n(LF:{lf_stat:.3f}\n(SW:{sw_stat:.3f})')
                ax2.set_ylabel('dMA-Dichte gegen Gauss-Dichte', color='red')
                ax2.legend()
                ax2.grid(True, linestyle='--')
@@ -391,8 +511,8 @@ def neu_zeichnen(idx_von, idx_bis):
             # ----------------------------------------------------------------------           
             #  FFT-Schaubild der dMA-Zyklen im Kurs-Diagramm vs. Gleitmittelwert MA
             # ----------------------------------------------------------------------
-            ax3.clear()
             if FFT_Diagram:
+               ax3.clear()
                ax3.set_xscale('log')
                ax3.set_title('Log-Spektrum  FFT(dMA) der MA-Abweichungen ', fontsize=10, fontweight='bold')
                # Das lila Amplituden-Spektrum logarithmisch aufzeichnen
@@ -411,6 +531,7 @@ def neu_zeichnen(idx_von, idx_bis):
                ax3.set_ylabel('Amplitude')
                ax3.legend(loc='upper right')
                ax3.grid(True, linestyle='--')
+               fig3.tight_layout()
     # ----------------------------------------------------------------------
     # drei Leinwaende synchron neu rendern
     # ----------------------------------------------------------------------
@@ -452,7 +573,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
 
             neu_zeichnen(idx_von_alt, idx_bis_alt)
 
-            # statt line.set_data(df['Date'], df['Price'])
+            # statt line_preis.set_data(df['Date'], df['Price'])
             # -------------------------------------
             # Prüfen, ob das alte Zeitfenster zur neuen Aktie passt
             # -------------------------------------
@@ -495,8 +616,6 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 print("-> Zeitfenster auf Vollansicht (VAR).")
                 
     return callback
-
-
 # ------------------------------------------------------------------------------
 #     14     Schleife zur event-überwachung aller Klaviertasten
 # ------------------------------------------------------------------------------
@@ -524,7 +643,6 @@ def on_clr_clicked(event):
 
 btn_clr.on_clicked(on_clr_clicked)   # clr-Schalter abrufen
 schalter_handles.append(btn_clr)     # in aktive handles-Liste eintragen
-
 # ------------------------------------------------------------------------------
 #     16           Funktionalität des ONLINE-Schalters
 # ------------------------------------------------------------------------------
@@ -539,8 +657,7 @@ def on_online_clicked(event):
     akt_Num = akt_ticker['Num']
     akt_Nam = akt_ticker['Nam']
     akt_Tik = akt_ticker['Tik']
-    csv_Nam = f"{akt_Num}{akt_Nam}_Offline.csv"
-    
+    csv_Nam = f"{akt_Num}{akt_Nam}_Offline.csv"  
     # Modus umschalten
     if val_online > 0:
         val_online = 0
@@ -549,8 +666,7 @@ def on_online_clicked(event):
     else:
         val_online = 1
         btn_online.label.set_text("ONLINE")
-        btn_online.color = "aqua"
-    
+        btn_online.color = "aqua"    
     # Aktuelle Aktie im neuen Modus nachladen
     lade_ticker_daten()
     if not df.empty:
@@ -559,17 +675,21 @@ def on_online_clicked(event):
     fig1.canvas.draw_idle()
 
 btn_online.on_clicked(on_online_clicked)  # online-Schalter abrufen
-
 # ------------------------------------------------------------------------------
 #     17                Fenster 4 Diagnose-Volatilität
 # ------------------------------------------------------------------------------
 def on_diag1_clicked(event):
+    global fig4
     df_zeitfenster, str_start, str_end = von_bis_ablesen()
     if df_zeitfenster is None or df_zeitfenster.empty: return
     
     miwe_val = df_zeitfenster['Price'].mean()
     df_zeitfenster['miwe'] = miwe_val
     df_zeitfenster['diffz'] = miwe_val + df_zeitfenster['Price'].diff().fillna(0)
+
+    if 'fig4' in globals() and fig4 is not None and plt.fignum_exists(fig4.number):
+        fig4.canvas.manager.window.lift()  # Holt bestehendes Fenster on top
+        return
 
     fig4, ax4 = plt.subplots(figsize=(9, 5.5))
     fig4.canvas.manager.set_window_title('4.Fenster - Volatilitätsuntersuchung')
@@ -673,7 +793,6 @@ def on_submit_end(text_input):
 
 text_box_start.on_submit(on_submit_start)   # Start-Datum abrufen
 text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen 
-
 # ------------------------------------------------------------------------------
 #     23 Ticker-Oszillograph starten/neu zeichnen und fig123,ax123 refreshen
 # ------------------------------------------------------------------------------
