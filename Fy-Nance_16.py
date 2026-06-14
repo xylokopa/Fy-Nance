@@ -1,4 +1,5 @@
 # Fy-Nance_16_260614.py 14-06-2026 800Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+# https://github.com/xylokopa/Fy-Nance
 import math
 import numpy as np
 import pandas as pd
@@ -32,7 +33,6 @@ MAmiw_linie = 0  # MoveAverage aus
 FEmiw_linie = 0  # Fenster-MiW aus
 diffz_linie = 0  # PreisMA-Dif aus
 FFT_Diagram = 0  # Fourier-Spektrum(Log) aus
-# ==============================================================================
 df = pd.DataFrame()                # Projekt DataFrame
 # ==============================================================================
 #     02 drei Fenster fig1,ax1 bis fig3,ax3 für canvas.draw_idle() bereitstellen
