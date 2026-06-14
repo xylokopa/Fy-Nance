@@ -1,5 +1,5 @@
 # Fy-Nance_14_neu.py 13-06-2026 716 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
-# Aufbau
+# Aufbau      https://github.com/xylokopa/Fy-Nance/blob/main/Fy-Nance_14_neu.py
 # 0a,0b       Importe und LOCALE-Zeit aufrufen
 # 01,02,03    Projekt-Variablen,Ticker-liste laden,Graphik-Fenster-Design
 # 04,05       Ticker-Daten laden und Ladevorgang anstossen
@@ -60,9 +60,9 @@ df = pd.DataFrame()                # globales DataFrame
 #     02 Ticker-Liste aus CSV-Liste laden
 # ------------------------------------------------------------------------------
 try:
-    ticker_df = pd.read_csv('Ticker-Liste.csv')
+    ticker_df = pd.read_csv('Ticker-Liste_alt.csv')
 except FileNotFoundError:
-    # Default Liste falls Ticker-Liste.csv fehlt
+    # Default Liste falls Ticker-Liste_alt.csv fehlt
     ticker_liste = """Num,Nam,Tik
 00,Allianz,ALV.DE
 01,Alstom,AOMD.DE
@@ -91,9 +91,9 @@ except FileNotFoundError:
 24,Vanguard,VWRL.SW
 25,Volkswagen,VOW.DE
 26,Volvo AB,VOL1.SG"""
-    with open('Ticker-Liste.csv', 'w') as f:
+    with open('Ticker-Liste_alt.csv', 'w') as f:
         f.write(ticker_liste)
-    ticker_df = pd.read_csv('Ticker-Liste.csv')
+    ticker_df = pd.read_csv('Ticker-Liste_alt.csv')
 # ==============================================================================
 #     03  drei Fenster fig,ax und fig2,ax2 für canvas.draw_idle() bereitstellen
 # ==============================================================================
@@ -714,4 +714,3 @@ text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen
 # ------------------------------------------------------------------------------
 neu_zeichnen(0, len(df)-1)
 plt.show()
-
