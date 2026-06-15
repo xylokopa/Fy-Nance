@@ -1,10 +1,10 @@
-# Fy-Nance_16_260614.py 14-06-2026 800Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+# Fy-Nance_16_260614.py 14-06-2026 807Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
 # https://github.com/xylokopa/Fy-Nance
 import math
 import numpy as np
 import pandas as pd
 import yfinance as yf
-import scipy.stats as stats
+from scipy import stats
 import statsmodels.api as sm  # pip install statsmodels (Lilliefors)
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -19,7 +19,7 @@ plt.rcParams['toolbar'] = 'None'
 # In den Funktionen darunter wird nur noch gelesen oder gezielt zugegriffen.
 val_online = 0            # default 1 = Online live, 0 = Offline
 val_clr    = 1            # Default 1 = FEST(Zoom behalten), 0 = VAR (Reset)
-akt_index  = 2            # Default-Ticker (Standard: 2 = Apple)
+akt_index  = 13            # Default-Ticker (Standard: 2 = Apple)
 yfNAME = "AAPL"                    # Default-Ticker für den Online-Start
 offlinecsv = "02Apple_Offline.csv" # Default-Ticker für den Offline-Start
 trigger = False                    # start-stop zum Schaubild-zeichnen
@@ -384,11 +384,14 @@ def neu_zeichnen(idx_von, idx_bis):
     if MAmiw_linie:
        line_MAmiw, = ax1.plot(df['Date'], df['MA'], label='MA', color='green')    
 
-    ma_mittelwert = df['MA'].mean()
+    # ma_mittelwert = df['MA'].mean()
+    y_min, y_max = ax1.get_ylim()
+    ma_mittelwert = (y_min + y_max)/2 
+
     y_FEmiw = [ma_mittelwert] * len(df)
     # 3. Hauptlinie -------------------------
     if FEmiw_linie:
-       line_FEmiw, = ax1.plot(df['Date'], y_FEmiw, label='Fenster-MW', color='black', linestyle='--')
+       line_FEmiw, = ax1.plot(df['Date'], y_FEmiw, label=f'{ma_mittelwert:2f}', color='black', linestyle='--')
     df['Diff'] =  df['Price'] - df['MA']
     # 4. Hauptlinie -------------------------
     if diffz_linie:

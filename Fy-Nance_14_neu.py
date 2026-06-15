@@ -1,4 +1,4 @@
-# Fy-Nance_14_neu.py 13-06-2026 716 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+# Fy-Nance_14_neu.py 15-06-2026 716 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
 # Aufbau      https://github.com/xylokopa/Fy-Nance/blob/main/Fy-Nance_14_neu.py
 # 0a,0b       Importe und LOCALE-Zeit aufrufen
 # 01,02,03    Projekt-Variablen,Ticker-liste laden,Graphik-Fenster-Design
@@ -38,7 +38,7 @@ plt.rcParams['toolbar'] = 'None'
 # ==============================================================================
 #     01    Projekt VARIABLEN
 # ==============================================================================
-val_online = 0            # default 1 = Online live, 0 = Offline
+val_online = 1            # default 1 = Online live, 0 = Offline
 val_clr    = 1            # Default 1 = FEST(Zoom behalten), 0 = VAR (Reset)
 akt_index       = 2                # Default-Ticker (Standard: 2 = Apple)
 yfNAME = "AAPL"                    # Default-Ticker für den Online-Start
@@ -131,7 +131,7 @@ def lade_ticker_daten(num_str, name, ticker_str):
             df_csv = df_live.rename(columns={"Close": "Price"}).dropna().reset_index()
             df_csv['Date'] = pd.to_datetime(df_csv['Date'])
             df_csv.to_csv(csv_nome, index=False)
-            print(f"-> live geladen und in {csv_name} gepuffert")
+            print(f"-> live geladen und in {csv_nome} gepuffert")
             df = df_csv.sort_values('Date').reset_index(drop=True)
             return
         except Exception as e:
@@ -209,10 +209,10 @@ btn_clr = Button(ax_clr, 'Zeitfenster : FEST', color='lime')
 btn_clr.label.set_fontsize(10)
 
 # --- PLATZIERUNG DIAGNOSE-BUTTONS  ---
-btn_diag1 = Button(ax_diag1, 'DIAGNOSE 1', color='#d3d3d3')
-btn_diag2 = Button(ax_diag2, 'DIAGNOSE 2 [X]', color='#e0e0e0')
-btn_diag3 = Button(ax_diag3, 'DIAGNOSE 3 [X]', color='#e0e0e0')
-btn_diag4 = Button(ax_diag4, 'DIAGNOSE 4 [X]', color='#e0e0e0')
+btn_diag1 = Button(ax_diag1, 'VOLATILITAET', color='#d3d3d3')
+btn_diag2 = Button(ax_diag2, 'Movg-Average', color='#e0e0e0')
+btn_diag3 = Button(ax_diag3, 'Diffz-Dichte', color='#e0e0e0')
+btn_diag4 = Button(ax_diag4, 'FFT-Perioden', color='#e0e0e0')
 # ------------------------------------------------------------------------------
 #     09                      Schaubild-Achsen skalieren
 # ------------------------------------------------------------------------------
@@ -293,11 +293,16 @@ def neu_zeichnen(idx_von, idx_bis):
     if MAmiw_linie:
        line_MAmiw, = ax.plot(df['Date'], df['MA'], label='MA', color='green')
     
-    ma_mittelwert = df['MA'].mean()
-    y_mamiw = [ma_mittelwert] * len(df)
+    x_min_num, x_max_num = ax.get_xlim()
+    dt_start_aktuell = mdates.num2date(x_min_num).replace(tzinfo=None)
+    dt_end_aktuell = mdates.num2date(x_max_num).replace(tzinfo=None)
+    df_fenster = df[(df['Date'] >= dt_start_aktuell) & (df['Date'] <= dt_end_aktuell)]
+    ma_mittelwert = df_fenster['MA'].mean()
+    y_mamiw = [ma_mittelwert] * len(df_fenster)
+
     # 3. Hauptlinie -------------------------    
     if FEmiw_linie:
-       line_FEmiw, = ax.plot(df['Date'], y_mamiw, label='FEnster-MW', color='black', linestyle='--')
+        line_FEmiw, = ax.plot(df['Date'], y_mamiw, label='FEnster-MW', color='black', linestyle='--')
     # 4. Hauptlinie -------------------------  
     df['Diff'] =  df['Price'] - df['MA']
     if diffz_linie:
@@ -311,7 +316,7 @@ def neu_zeichnen(idx_von, idx_bis):
     idx_von = max(0, min(idx_von, len(df)-1))
     idx_bis = max(0, min(idx_bis, len(df)-1))
     if idx_von > idx_bis: idx_von = idx_bis
-    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|314')
+    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|319')
     slider_von.set_val(idx_von)
     slider_bis.set_val(idx_bis)
 
@@ -470,7 +475,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
             max_index_neu = len(df) - 1
             
             # neue Slider-Maximalgrenzen anpassen
-            txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|473')
+            txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|478')
             slider_von.valmax = max_index_neu
             slider_bis.valmax = max_index_neu
 
@@ -486,7 +491,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 # -------------------------------------
                 von_abgesichert = min(idx_von_alt, max_index_neu)
                 bis_abgesichert = min(idx_bis_alt, max_index_neu)
-                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|489')
+                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|494')
                 slider_von.set_val(von_abgesichert)
                 slider_bis.set_val(bis_abgesichert)
                 
@@ -506,7 +511,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 # -------------------------------------
                 if val_clr == 1:
                     print("-> Ticker mit zu wenig Historie. Datums-Reset nötig")
-                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|509')
+                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|514')
                 slider_von.set_val(0)
                 slider_bis.set_val(max_index_neu)
                 
@@ -619,7 +624,7 @@ def on_diag2_clicked(event):
     diffz_linie = 0    # aus
     FFT_Diagram = 0    # aus  
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|622')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|627')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -640,7 +645,7 @@ def on_diag3_clicked(event):
     FEmiw_linie = 1    # ein
     FFT_Diagram = 0    # aus
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|643')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|648')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -661,7 +666,7 @@ def on_diag4_clicked(event):
     if FFT_Diagram == 1: FFT_Diagram = 0
     else: FFT_Diagram = 1
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|664')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|669')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -673,7 +678,7 @@ def on_submit_start(text_input):
     try:
         target_date = pd.to_datetime(text_input.strip(), format='%Y-%m-%d')
         idx = (df['Date'] - target_date).abs().idxmin()
-        txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|676')
+        txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|681')
         neu_zeichnen(idx, int(slider_bis.val))
     except ValueError:
         neu_zeichnen(int(slider_von.val), int(slider_bis.val))
@@ -702,11 +707,11 @@ btn_diag4.on_clicked(on_diag4_clicked)
 # ---------------------------------------------------------------------------------
 #     21  Huckepack-Aufruf der beiden Slider um beim Schieben plot neu zu zeichnen
 # ---------------------------------------------------------------------------------
-txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|705')
+txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|710')
 slider_von.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
 slider_bis.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
 
-txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|709')
+txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|714')
 text_box_start.on_submit(on_submit_start)   # Start-Datum abrufen
 text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen 
 # ------------------------------------------------------------------------------
