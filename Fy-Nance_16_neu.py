@@ -1,4 +1,4 @@
-# Fy-Nance_15-16.py 15-06-2026 21h46 842 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+# Fy-Nance_16.py 15-06-2026 21h46 843 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
 # Aufbau      https://github.com/xylokopa/Fy-Nance/blob/main/Fy-Nance_14_neu.py
 # 0a,0b       Importe und LOCALE-Zeit aufrufen
 # 01,02,03    Projekt-Variablen,Ticker-liste laden,Graphik-Fenster-Design
@@ -374,7 +374,7 @@ def neu_zeichnen(idx_von, idx_bis):
 
     if len(txt_box_status.text_disp.get_text())>=95:
        txt_box_status.set_val('ovfl')
-    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|273')
+    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|377')
 
     if trigger or df.empty: return
     trigger = True
@@ -396,7 +396,7 @@ def neu_zeichnen(idx_von, idx_bis):
     idx_von = max(0, min(idx_von, len(df)-1))
     idx_bis = max(0, min(idx_bis, len(df)-1))
     if idx_von > idx_bis: idx_von = idx_bis
-    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|398')
+    txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|399')
     slider_von.set_val(idx_von)
     slider_bis.set_val(idx_bis)
     # ----------------------------------------------------------------------     
@@ -597,7 +597,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
             max_index_neu = len(df) - 1
             
             # neue Slider-Maximalgrenzen anpassen
-            txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|599')
+            txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|600')
             slider_von.valmax = max_index_neu
             slider_bis.valmax = max_index_neu
 
@@ -613,7 +613,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 # -------------------------------------
                 von_abgesichert = min(idx_von_alt, max_index_neu)
                 bis_abgesichert = min(idx_bis_alt, max_index_neu)
-                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|615')
+                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|616')
                 slider_von.set_val(von_abgesichert)
                 slider_bis.set_val(bis_abgesichert)
                 
@@ -633,7 +633,7 @@ def ticker_klavier_klick(num_str, name, ticker_str, button_index):
                 # -------------------------------------
                 if val_clr == 1:
                     print("-> Ticker mit zu wenig Historie. Datums-Reset nötig")
-                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|635')
+                txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|636')
                 slider_von.set_val(0)
                 slider_bis.set_val(max_index_neu)
                 
@@ -746,7 +746,7 @@ def on_diag2_clicked(event):
     diffz_linie = 0    # aus
     FFT_Diagram = 0    # aus  
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|748')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|749')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -767,7 +767,7 @@ def on_diag3_clicked(event):
     FEmiw_linie = 1    # ein
     FFT_Diagram = 0    # aus
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|769')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|770')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -788,7 +788,7 @@ def on_diag4_clicked(event):
     if FFT_Diagram == 1: FFT_Diagram = 0
     else: FFT_Diagram = 1
     df_zeitfenster, str_start, str_end, idx_von, idx_bis = von_bis_ablesen()
-    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|790')
+    # txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|791')
     status = ' Status : idx_von = '+str(idx_von)+' bis '+' idx_bis = '+str(idx_bis)
     txt_box_status.set_val(status) 
     neu_zeichnen(idx_von,idx_bis)
@@ -800,7 +800,7 @@ def on_submit_start(text_input):
     try:
         target_date = pd.to_datetime(text_input.strip(), format='%Y-%m-%d')
         idx = (df['Date'] - target_date).abs().idxmin()
-        txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|802')
+        txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|803')
         neu_zeichnen(idx, int(slider_bis.val))
     except ValueError:
         neu_zeichnen(int(slider_von.val), int(slider_bis.val))
@@ -829,11 +829,11 @@ btn_diag4.on_clicked(on_diag4_clicked)
 # ---------------------------------------------------------------------------------
 #     21  Huckepack-Aufruf der beiden Slider um beim Schieben plot neu zu zeichnen
 # ---------------------------------------------------------------------------------
-txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|831')
+txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|832')
 slider_von.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
 slider_bis.on_changed(lambda v: neu_zeichnen(int(slider_von.val), int(slider_bis.val)))
 
-txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|835')
+txt_box_status.set_val(txt_box_status.text_disp.get_text()+'|836')
 text_box_start.on_submit(on_submit_start)   # Start-Datum abrufen
 text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen 
 # ------------------------------------------------------------------------------
