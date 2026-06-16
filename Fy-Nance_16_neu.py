@@ -1,5 +1,5 @@
-# Fy-Nance_16.py 15-06-2026 21h46 843 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
-# Aufbau      https://github.com/xylokopa/Fy-Nance/blob/main/Fy-Nance_14_neu.py
+# Fy-Nance_16.py 16-06-2026 10h05 843 Zeilen Ticker-Oszillograph R.Wu_GastH_Nr178854
+# Aufbau      https://github.com/xylokopa/Fy-Nance/blob/main/Fy-Nance_16_neu.py
 # 0a,0b       Importe und LOCALE-Zeit aufrufen
 # 01,02,03    Projekt-Variablen,Ticker-liste laden,Graphik-Fenster-Design
 # 04,05       Ticker-Daten laden und Ladevorgang anstossen
