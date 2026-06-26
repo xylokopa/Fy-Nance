@@ -1,4 +1,4 @@
-# AAPL_Beispiel.py  50Zeilen Aktiensparen 21.11.2025
+# AAPL_Beispiel.py  50Zeilen Aktiensparen zwischen 2019 und 2021
 import yfinance as yf
 import pandas as pd
 import numpy as np
