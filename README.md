@@ -32,4 +32,4 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **README.md** | `MD` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/README.md) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/README.md)| Markdown Page-Descriptor|
 
 
-https://github.com/xylokopa/Fy-Nance/blob/main/README.md
+
