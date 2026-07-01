@@ -1,9 +1,10 @@
 # Fy-Nance
 contains scripst , data snippets and other material for continuation of
 the python-course WS 25-26
-### ⚠️ WICHTIGER DOWNLOAD-HINWEIS (Für fehlerfreie Dateien):
-> **Bitte die Download-Links NICHT einfach normal anklicken!**
-> Macht stattdessen einen **Rechtsklick** auf den jeweiligen [📥 Download]-Link und wählt **"Link speichern unter..."** (bzw. *"Ziel speichern unter..."*). 
+### ⚠️ DOWNLOAD-HINWEIS (Für fehlerfreie Dateien):
+> **Download-Links NICHT einfach normal anklicken!**
+> **Linksklick** nur wenn in der TAbelle angeboten ...und
+> **Rechtsklick** zum ECHTEN Download [📥 Download]-Link mit **"Link speichern unter..."** (bzw. *"Ziel speichern unter..."*). 
 > Nur so landen die Skripte sauber im richtigen UTF-8-Format in eurem  z.B. `JupyterLab/Fy-Nance` Ordner!
 
 ---
