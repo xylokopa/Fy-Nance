@@ -12,7 +12,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 > 3] BOszi_Projekt_prerequisites.py    
 > 4] Oszi_03n_290626.ipynb  
 > 5] AAPL_Beispiel.py  
-> 6] BOszi_03.pdf
+> 6] BOszi_03.pdf  
 > ... usw ...    
   
 > Windows lokal : Python version 3 mindestens(3.14 reicht sicher) sollte installiert und per Windows-PATH eingetragen sein    
