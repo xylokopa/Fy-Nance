@@ -11,7 +11,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 > 2] BOszi_03.pdf  
 > 3] BOszi_Projekt.py  
 > 4] BOszi_Projekt_prerequisites.py  
-> 5] Oszi_03n_290606.ipynb  
+> 5] Oszi_03n_290626.ipynb  
 
 > Windows lokal : Python version 3 mindestens(3.14 reicht sicher) sollte installiert und per Windows-PATH eingetragen sein    
 > PATH-Test : im Windows-Explorer Doppelklick auf die  BOszi_Projekt_prerequisites.py => py.exe müsste starten und testen.    
@@ -26,7 +26,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Python-Script komplett-Doku PDF |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | Hauptprogramm Python-Code |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt_prerequisites.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
-| **Oszi_03n_290606.ipynb** | `PDF` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290606.ipynb ) | [📥](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb) | jupyter Notebook Version 03n 29-06-26 |
+| **Oszi_03n_290606.ipynb** | `PDF` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb ) | [📥](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb) | jupyter Notebook Version 03n 29-06-26 |
 | **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/POszi03_001.PNG) | Screencopy of what you should see|
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf)| PCA-Ressources PDF|
 
