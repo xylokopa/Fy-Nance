@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 import os
-csv_Nam ="AAPL.csv"  # geht von 2015 bis 2026,boersentaeglich!
+csv_Nam ="02Apple_Offline.csv"  # geht von 2015 bis 2026,boersentaeglich!
 if os.path.exists(csv_Nam):
    print(f"lokale csv {csv_Nam} wird geladen...")
    df_csv = pd.read_csv(csv_Nam)
