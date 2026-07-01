@@ -20,7 +20,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
-| Komponente / Baustein | Typ |  LINKE MAUSTASTE nur zum betrachten...| RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
+| Komponente / Baustein | Typ |  LINKE MAUSTASTE  nur zum betrachten...| RECHTE MAUSTASTE  Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
