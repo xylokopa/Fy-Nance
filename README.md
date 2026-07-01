@@ -18,7 +18,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 > Notebook-Test : zB. mit  C:\jupyterlabs>jupyter lab  starten und Oszi_03n_290606.ipynb in Zelle mit  Strg/Enter starten.    
 ---
 
-### 🛠️ Fy-Nance: Projekt-Komponenten
+### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
 | Komponente / Baustein | Typ |  LINKE MAUSTASTE | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
