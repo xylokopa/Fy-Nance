@@ -29,5 +29,6 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **Oszi_03n_290606.ipynb** | `PDF` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290606.ipynb ) | [📥](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/Oszi_03n_290606.ipynb) | jupyter Notebook Version 03n 29.Juni |
 | **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/POszi03_001.PNG) | Screencopy of what you should see|
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf)| PCA-Ressources PDF|
-) | CSV-Ressources for PCA. |
+
+
 
