@@ -36,4 +36,3 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 
 
 
-AAPL_Beispiel.py
