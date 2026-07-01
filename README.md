@@ -22,11 +22,11 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 
 | Komponente / Baustein | Typ |  LINKE MAUSTASTE  nur zum betrachten...| RECHTE MAUSTASTE  Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **02Apple_offline.csv** | `CSV` | [💀](https://xylokopa.github.io/Fy-Nance/02Apple_offline.csv) | [📥](https://github.com/xylokopa/Fy-Nance/02Apple_offline.csv) | Default-CSV für Start |
-| **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/BOszi_03.pdf) | Python-Script komplett-Doku |
-| **BOszi_Projekt.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/BOszi_Projekt.py) | Original-Python-Code |
-| **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | [📥](https://github.com/xylokopa/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | Testprogramm Python-Code |
+| **02Apple_offline.csv** | `CSV` | [💀](https://xylokopa.github.io/Fy-Nance/02Apple_offline.csv) | [📥](https://https://xylokopa.github.io/Fy-Nance/02Apple_offline.csv) | Default-CSV für Start |
+| **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/Fy-Nance/BOszi_03.pdf) | Python-Script komplett-Doku |
+| **BOszi_Projekt.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | Original-Python-Code |
+| **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | Testprogramm Python-Code |
 | **Oszi_03n_290606.ipynb** | `PDF` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290606.ipynb ) | [📥](https://github.com/xylokopa/Fy-Nance/Oszi_03n_290606.ipynb ) | jupyter Notebook Version 03n 29.Juni |
-| **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/POszi03_001.PNG) | Screencopy of what you should see|
-| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
+| **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | Screencopy of what you should see|
+| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
 
