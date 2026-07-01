@@ -15,7 +15,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 
 > Windows lokal : Python version 3 mindestens(3.14 reicht sicher) sollte installiert und per Windows-PATH eingetragen sein    
 > PATH-Test : im Windows-Explorer Doppelklick auf die  BOszi_Projekt_prerequisites.py => py.exe müsste starten und testen.    
-> Notebook-Test : zB. mit  C:\jupyterlabs>jupyter lab  starten und Oszi_03n_290606.ipynb in Zelle mit  Strg/Enter starten.    
+> Notebook-Test : zB. mit  C:\jupyterlabs>jupyter lab  starten und Oszi_03n_290626.ipynb in Zelle mit  Strg/Enter starten.    
 ---
 
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
