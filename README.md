@@ -11,7 +11,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 > 2] BOszi_Projekt.py    
 > 3] BOszi_Projekt_prerequisites.py    
 > 4] Oszi_03n_290626.ipynb  
-> 5] AAPL_Beispiel.py  
+> 5] AAPL_Beispiel.ipynb  
 > 6] BOszi_03.pdf  
 > ... usw ...    
   
@@ -28,7 +28,7 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | Hauptprogramm Python-Code |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt_prerequisites.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb ) | [📥](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb) | jupyter Notebook Version 03n 29-06-26 |
-| **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/AAPL_Beispiel.py) | [📥](https://xylokopa.github.io/Fy-Nance/AAPL_Beispiel.py) | Einführungsprogramm Python-Code |
+| **AAPL_Beispiel.ipynb** | `iPYNB` | [🧪](https://xylokopa.github.io/Fy-Nance/AAPL_Beispiel.ipynb) | [📥](https://xylokopa.github.io/Fy-Nance/AAPL_Beispiel.ipynb) | Einführungsprogramm als Notebook|
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Python-Script komplett-Doku PDF |
 | **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/POszi03_001.PNG) | Screencopy when Running Program|
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf)| PCA-Ressources PDF|
