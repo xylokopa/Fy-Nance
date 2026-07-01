@@ -2,7 +2,7 @@
 contains scripst , data snippets and other material for yahoo-finance-projects in python-4-data course SS 26
 ### ⚠️ DOWNLOAD-HINWEIS (Für fehlerfreie Dateien):
 > **Download-Links NICHT einfach normal anklicken!**
-> **Linksklick** nur wenn in der TAbelle angeboten ...und
+> **Linksklick** nur wenn in der Tabelle angeboten ...und
 > **Rechtsklick** zum ECHTEN Download [📥 Download]-Link mit **"Link speichern unter..."** (bzw. *"Ziel speichern unter..."*). 
 > Nur so landen die Skripte sauber im richtigen UTF-8-Format in eurem  z.B. `JupyterLab/Fy-Nance` Ordner!
 
@@ -12,4 +12,5 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 
 | Komponente / Baustein | Typ |  LINKE MAUSTASTE | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
+| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
