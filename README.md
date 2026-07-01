@@ -1,6 +1,6 @@
 # Fy-Nance
 contains scripst , data snippets and other material for yahoo-finance-projects in python-4-data course SS 26
-### ⚠️ DOWNLOAD-HINWEIS (Für fehlerfreie Dateien):  
+### ⚠️ DOWNLOAD-HINWEIS (um dieses Projekt als eingeloggter Student im Hörsaal zu laden):  
 > **Download-Links NICHT einfach normal anklicken!**  
 > **Linksklick** nur wenn in der Tabelle angeboten ...und  
 > **Rechtsklick** zum ECHTEN Download [📥 Download]-Link mit **"Link speichern unter..."** (bzw. *"Ziel speichern unter..."*).   
