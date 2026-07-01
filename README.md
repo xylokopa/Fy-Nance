@@ -27,9 +27,11 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | Hauptprogramm Python-Code |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/BOszi_Projekt_prerequisites.py) | [📥](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb ) | [📥](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290626.ipynb) | jupyter Notebook Version 03n 29-06-26 |
+| **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/AAPL_Beispiel.py) | [📥](https://xylokopa.github.io/Fy-Nance/AAPL_Beispiel.py) | Hauptprogramm Python-Code |
 | **POszi03_001** | `PNG` | [📺](https://xylokopa.github.io/Fy-Nance/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/raw/refs/heads/main/POszi03_001.PNG) | Screencopy when Running Program|
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf)| PCA-Ressources PDF|
 | **README.md**  schreib vor https|`view-source:`| [💀](https://github.com/xylokopa/Fy-Nance/blob/main/README.md) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/README.md)| hier die Endung VON HAND auf .md SETZEN !|
 
 
 
+AAPL_Beispiel.py
