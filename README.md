@@ -27,5 +27,5 @@ contains scripst , data snippets and other material for yahoo-finance-projects i
 | **BOszi_Projekt.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/BOszi_Projekt.py) | Original-Python-Code |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://xylokopa.github.io/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | [📥](https://github.com/xylokopa/Fy-Nance/BOszi_Projekt_prerequisites.py  ) | Testprogramm Python-Code |
 | **Oszi_03n_290606.ipynb** | `PDF` | [💀](https://xylokopa.github.io/Fy-Nance/Oszi_03n_290606.ipynb ) | [📥](https://github.com/xylokopa/Fy-Nance/Oszi_03n_290606.ipynb ) | jupyter Notebook Version 03n 29.Juni |
-| **POszi03_001** | `PNG` | [👁️](https://xylokopa.github.io/Fy-Nance/POszi03_001) | [📥](https://github.com/xylokopa/Fy-Nance/POszi03_001.png) | Screencopy of what you should see|
+| **POszi03_001** | `PNG` | ![📺](https://xylokopa.github.io/Fy-Nance/POszi03_001) | [📥](https://github.com/xylokopa/Fy-Nance/POszi03_001.png) | Screencopy of what you should see|
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
