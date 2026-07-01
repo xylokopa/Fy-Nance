@@ -12,4 +12,4 @@ the python-course WS 25-26
 
 | Komponente / Baustein | Typ | Direkt-Ansicht (Browser) | Download für Jupyter / Explorer | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **PCA-Dokumentation** | `PDF` | [👁️ Online öffnen](https://github.io) | [📥 Download](https://github.com) | CSV-Ressources for PCA. |
+| **PCA-Dokumentation** | `PDF` | [👁️ Online öffnen](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥 Download](https://github.com) | CSV-Ressources for PCA. |
