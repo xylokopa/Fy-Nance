@@ -1,6 +1,5 @@
 # Fy-Nance
-contains scripst , data snippets and other material for continuation of
-the python-course WS 25-26
+contains scripst , data snippets and other material for yahoo-finance-projects in python-4-data course SS 26
 ### ⚠️ DOWNLOAD-HINWEIS (Für fehlerfreie Dateien):
 > **Download-Links NICHT einfach normal anklicken!**
 > **Linksklick** nur wenn in der TAbelle angeboten ...und
