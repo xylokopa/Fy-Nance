@@ -12,4 +12,4 @@ the python-course WS 25-26
 
 | Komponente / Baustein | Typ | Direkt-Ansicht (Browser) | Download für Jupyter / Explorer | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **PCA-Dokumentation** | `PDF` | [👁️ Online öffnen](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥 Download](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
+| **PCA-Dokumentation** | `PDF` | [👁️ LINKE MAUSTASTE](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥 RECHTE MAUSTASTE](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
