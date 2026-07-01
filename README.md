@@ -10,6 +10,6 @@ the python-course WS 25-26
 
 ### 🛠️ Fy-Nance: Projekt-Komponenten
 
-| Komponente / Baustein | Typ | Direkt-Ansicht (Browser) | Download für Jupyter / Explorer | Beschreibung |
+| Komponente / Baustein | Typ |  LINKE MAUSTASTE | RECHTE MAUSTASTE | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **PCA-Dokumentation** | `PDF` | [👁️ LINKE MAUSTASTE](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥 RECHTE MAUSTASTE](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
+| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/PCA-Data-ressources.pdf) | CSV-Ressources for PCA. |
