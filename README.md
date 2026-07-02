@@ -15,3 +15,7 @@
 | **BILD-AUSSCHNITT** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png?raw=true) | Screencopy wenn alles OK |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy wenn alles OK |
+
+| Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
+| :--- | :---: | :---: | :---: | :--- |
+| **02Apple_offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
