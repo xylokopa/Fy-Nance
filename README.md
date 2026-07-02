@@ -3,7 +3,7 @@
 </div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
-| Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
+| Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
 | **02Apple_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel jupyter Notebook|
