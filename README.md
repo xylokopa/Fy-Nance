@@ -2,7 +2,7 @@
   📥 https://github.com/xylokopa/Fy-Nance
 </h1>
 <div align="center">
-  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/figur0-3.png" alt="Titelbild" width="100%">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/figur0-3.png?raw=true" alt="Titelbild" width="100%">
 </div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
