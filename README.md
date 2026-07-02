@@ -5,7 +5,9 @@
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **Ticker-Liste_alt.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/Ticker-Liste_alt.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/Ticker-Liste_alt.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
+| **Ticker-Liste_alt.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/Ticker-Liste_alt.csv) | [📥]
+(https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/Ticker-Liste_alt.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
+| **02Apple_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel jupyter Notebook|
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
