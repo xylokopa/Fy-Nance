@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/CMD-GIT-CLONE.PNG?raw=true" alt="CMD-GIT-CLONE" width="100%">
 </div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
