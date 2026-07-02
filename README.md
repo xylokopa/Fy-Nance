@@ -16,9 +16,8 @@
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy wenn alles OK |
 
-| Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
+| OFFLINE-DATEN / CSV | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
