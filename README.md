@@ -8,5 +8,5 @@
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Version 03n 29-06-26 |
 | **POszi03_001** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy when Running Program |
-| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/PCA-Data-ressources.pdf) | PCA-Ressources PDF |
+| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | [📥] Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 
