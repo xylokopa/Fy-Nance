@@ -2,7 +2,7 @@
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
-| **02Apple_offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
+| **02Apple_offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://github.com/xylokopa/Fy-Nance/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **BOszi_03code.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/POszi_03code.pdf) | [📥](github.com/xylokopa/Fy-Nance/blob/main/POszi_03code.pdf) | Python-Script komplett-Doku PDF |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
