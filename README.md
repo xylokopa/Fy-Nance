@@ -1,6 +1,3 @@
-<h1 align="center" style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
-  📥 https://github.com/xylokopa/Fy-Nance
-</h1>
 <div align="center">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
 </div>
