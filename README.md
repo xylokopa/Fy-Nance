@@ -8,6 +8,6 @@
 | **BOszi_03code.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Testprogramm Python-Code |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
-| **POszi03_001** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy when Running Program |
+| **POszi03_001** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy wenn alles OK |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 
