@@ -1,5 +1,5 @@
 <h1 align="center" style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
-  📥 HIER DOWNLOADEN
+  📥 https://github.com/xylokopa/Fy-Nance
 </h1>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
