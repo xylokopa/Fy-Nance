@@ -16,6 +16,7 @@
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/POszi03_001.PNG?raw=true) | Screencopy wenn alles OK |
 
+| :--- | :---: | :---: | :---: | :--- |
 
 | OFFLINE-DATEN / CSV | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
