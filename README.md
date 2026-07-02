@@ -1,6 +1,9 @@
 <h1 align="center" style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
   📥 https://github.com/xylokopa/Fy-Nance
 </h1>
+<div align="center">
+  <img src="figur0-3.png" alt="Titelbild" width="100%">
+</div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
