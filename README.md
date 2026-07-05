@@ -14,7 +14,7 @@
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
 | **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | Übungsbeispiel Python-Code |
 | **BILD-AUSSCHNITT** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png?raw=true) | Screencopy wenn alles OK |
-| **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.PNG?raw=true) | Screencopy wenn alles OK |
+| **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png?raw=true) | Screencopy wenn alles OK |
 | **WORTSCHATZ** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/WORTSCHATZ.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
