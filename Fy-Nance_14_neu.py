@@ -3,9 +3,9 @@
 #                                                                         #
 #  throught:  https://github.com/xylokopa/Fy-Nance/blob/main/README.md    #
 #                                                                         #                                                                                    
-#        or:  https://github.com/xylokopa/Fy-Nance/README.md              #
+#             or just walk in, if you are a GitHubber, and look around    #
 #                                                                         #
-#        or:  https://github.com/xylokopa       just because              #                                                                                    
+#             https://github.com/xylokopa       just because              #                                                                                    
 #                                                                         #                                                                                    
 #        without the subsequent indications, it will impossible           #                                                                                    
 #                                                                         #                                                                                    
