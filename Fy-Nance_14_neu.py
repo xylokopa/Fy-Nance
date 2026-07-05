@@ -1,3 +1,38 @@
+###########################################################################
+#  Before running this Script please read the informations given to you   #          
+#                                                                         #
+#  throught:  https://github.com/xylokopa/Fy-Nance/blob/main/README.md    #
+#                                                                         #                                                                                    
+#        or:  https://github.com/xylokopy/Fy-Nance/README.md              #
+#                                                                         #
+#        or:  https://github.com/fylokopa            because                        #                                                                                    
+#                                                                         #                                                                                    
+#        without the subsequent indications, it will impossible           #                                                                                    
+#                                                                         #                                                                                    
+#                    to run the software                                  #                                                                                    
+###########################################################################
+#                                                                         #                                                                                    
+#                                                                         #                                                                                    
+#   Do not forget, if you like it easy and smooth , to install GIT        #                                                                                    
+#                                                                         #                                                                                    
+#   After that , create a local playground in your Jupyter-Folder ,       #                                                                                    
+#                                                                         #                                                                                    
+#   for example c:\myJupyterFolder\GIT-Download  (if you are Windows...)  #                                                                                    
+#                                                                         #                                                                                    
+#   open a cmd (with.Admin rights) , walk into the GIT-Download folder    #                                                                                    
+#                                                                         #                                                                                    
+#   and hit    git clone https://Github.com/xylokopa/Fy-Nance             #                                                                                    
+#                                                                         #                                                                                    
+###########################################################################
+#                                                                         #                                                                                    
+#    If you are curious ( I hope you are ) go and read the README !       #                                                                                    
+#                                                                         #                                                                                    
+###########################################################################
+#                                                                         #                                                                                    
+#    If you don't have GIT , NO MATTER : THE README WILL GUIDE YOU        #                                                                                    
+#                                                                         #                                                                                    
+###########################################################################
+
 # BoersenOszi.py 16/28-06-2026 18h25 940.Z Version 03 R.Wu_GastH_Nr178854
 # Alle Importe
 import math
@@ -41,7 +76,9 @@ ax5 = axd['5Win']
 # ==============================================================================
 #     0b    Importe und Lokalzeit über LOCALE aufrufen und speichern
 # ==============================================================================
-datuhr='_Fig'                          # dummy wenn keine locale-Funktionalitaet
+datuhr=
+
+'_Fig'                          # dummy wenn keine locale-Funktionalitaet
 locale.setlocale(locale.LC_TIME, "de_DE")
 datu=str(datetime.now())
 datuhr=datu[2:4:1]+datu[5:7:1]+datu[8:10:1]+'_'+datu[11:13:1]+'h'+datu[14:16:1]
