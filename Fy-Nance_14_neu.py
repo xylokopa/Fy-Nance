@@ -19,7 +19,7 @@
 #                       to run the software                               #                                                                                    
 ###########################################################################
 #                                                                         #                                                                                    
-#          Please install GIT, if you want full functionalty              #                                                                                    
+#          Please install GIT, if you want full functionality             #                                                                                    
 #                                                                         #                                                                                    
 #   After that , create a local playground in your Jupyter-Folder ,       #                                                                                    
 #                                                                         #                                                                                    
@@ -34,4 +34,40 @@
 #           If you don't have GIT , THE README WILL GUIDE YOU             #                                                                                    
 #                                                                         #                                                                                    
 ###########################################################################
+print(r"###########################################################################")
+print(r"#                                                                         #")
+print(r"#  Before running the scripts, please read the informations given to you  #")          
+print(r"#                                                                         #")
+print(r"#    throught simply opening:  https://github.com/xylokopa/Fy-Nance       #")
+print(r"#                                                                         #")
+print(r"###########################################################################")
+print(r"#                                                                         #")
+print(r"#            If you want to reach the README.md directly, enter :         #")
+print(r"#                                                                         #")
+print(r"#             Github.com/xylokopa/Fy-Nance/blob/main/README.md            #")
+print(r"#                                                                         #")                                                                                  
+print(r"#        or just walk in, if you are a GitHubber, and look around         #")
+print(r"#                                                                         #")
+print(r"#             https://github.com/xylokopa       just because              #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#        without the subsequent indications, it will be impossible        #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#                       to run the software                               #")                                                                                    
+print(r"###########################################################################")
+print(r"#                                                                         #")                                                                                    
+print(r"#          Please install GIT, if you want full functionality             #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#   After that , create a local playground in your Jupyter-Folder ,       #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#   for example c:\myJupyterFolder\GIT-Download  (if you are Windows...)  #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#   open a cmd (with admin rights) , walk into the GIT-Download folder    #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"#   and hit    git clone https://Github.com/xylokopa/Fy-Nance             #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"###########################################################################")
+print(r"#                                                                         #")                                                                                    
+print(r"#           If you don't have GIT , THE README WILL GUIDE YOU             #")                                                                                    
+print(r"#                                                                         #")                                                                                    
+print(r"###########################################################################")
 
