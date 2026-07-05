@@ -6,11 +6,11 @@
 #                                                                         #
 ###########################################################################
 #                                                                         #
-#               If you want to reach the README.md directly, enter :      #
+#            If you want to reach the README.md directly, enter :         #
 #                                                                         #
-#          Github.com/xylokopa/Fy-Nance/blob/main/README.md               #
+#             Github.com/xylokopa/Fy-Nance/blob/main/README.md            #
 #                                                                         #                                                                                    
-#       or just walk in, if you are a GitHubber, and look around          #
+#        or just walk in, if you are a GitHubber, and look around         #
 #                                                                         #
 #             https://github.com/xylokopa       just because              #                                                                                    
 #                                                                         #                                                                                    
@@ -25,7 +25,7 @@
 #                                                                         #                                                                                    
 #   for example c:\myJupyterFolder\GIT-Download  (if you are Windows...)  #                                                                                    
 #                                                                         #                                                                                    
-#   open a cmd (with.Admin rights) , walk into the GIT-Download folder    #                                                                                    
+#   open a cmd (with admin rights) , walk into the GIT-Download folder    #                                                                                    
 #                                                                         #                                                                                    
 #   and hit    git clone https://Github.com/xylokopa/Fy-Nance             #                                                                                    
 #                                                                         #                                                                                    
