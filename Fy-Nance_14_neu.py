@@ -3,7 +3,7 @@
 #                                                                         #
 #  throught:  https://github.com/xylokopa/Fy-Nance/blob/main/README.md    #
 #                                                                         #                                                                                    
-#        or:  https://github.com/xylokopy/Fy-Nance/README.md              #
+#        or:  https://github.com/xylokopa/Fy-Nance/README.md              #
 #                                                                         #
 #        or:  https://github.com/xylokopa       just because                        #                                                                                    
 #                                                                         #                                                                                    
