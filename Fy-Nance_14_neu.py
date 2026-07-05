@@ -12,7 +12,6 @@
 #                       to run the software                               #                                                                                    
 ###########################################################################
 #                                                                         #                                                                                    
-#                                                                         #                                                                                    
 #   Do not forget, if you like it easy and smooth , to install GIT        #                                                                                    
 #                                                                         #                                                                                    
 #   After that , create a local playground in your Jupyter-Folder ,       #                                                                                    
