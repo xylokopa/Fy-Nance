@@ -7,7 +7,7 @@
 #                                                                         #
 #             https://github.com/xylokopa       just because              #                                                                                    
 #                                                                         #                                                                                    
-#        without the subsequent indications, it will impossible           #                                                                                    
+#       without the subsequent indications, it will be  impossible        #                                                                                    
 #                                                                         #                                                                                    
 #                       to run the software                               #                                                                                    
 ###########################################################################
