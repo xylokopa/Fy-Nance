@@ -53,8 +53,9 @@ import locale
 # %matplotlib widget
 OSZ='Oszi_03n'
 plt.rcParams['toolbar'] = 'None'
-layout = [['.','3Win','1Win','1Win','4Win'],['.','2Win','1Win','1Win','5Win'],
-                                    ['.','.','.','.','.']]  # bei Lücke '.']]
+layout = [['.','3Win','1Win','1Win','4Win'],
+          ['.','2Win','1Win','1Win','5Win'],
+          ['.','.','.','.','.']]  # bei Lücke '.']]
 breitverh = [0.525] * 1 + [1.25] * 1 + [1] * 2 + [1.25] * 1
 hoeheverh = [1] * 2 + [0.5] * 1
 # Gesamtgröße not tight but constrained 
@@ -76,9 +77,7 @@ ax5 = axd['5Win']
 # ==============================================================================
 #     0b    Importe und Lokalzeit über LOCALE aufrufen und speichern
 # ==============================================================================
-datuhr=
-
-'_Fig'                          # dummy wenn keine locale-Funktionalitaet
+datuhr='_Fig'                          # dummy wenn keine locale-Funktionalitaet
 locale.setlocale(locale.LC_TIME, "de_DE")
 datu=str(datetime.now())
 datuhr=datu[2:4:1]+datu[5:7:1]+datu[8:10:1]+'_'+datu[11:13:1]+'h'+datu[14:16:1]
