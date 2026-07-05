@@ -5,7 +5,7 @@
 #                                                                         #                                                                                    
 #        or:  https://github.com/xylokopa/Fy-Nance/README.md              #
 #                                                                         #
-#        or:  https://github.com/xylokopa       just because                        #                                                                                    
+#        or:  https://github.com/xylokopa       just because              #                                                                                    
 #                                                                         #                                                                                    
 #        without the subsequent indications, it will impossible           #                                                                                    
 #                                                                         #                                                                                    
