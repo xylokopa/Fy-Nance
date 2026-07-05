@@ -1,12 +1,12 @@
 ###########################################################################
 #                                                                         #
-#  Before running the scripts please read the informations given to you   #          
+#  Before running the scripts, please read the informations given to you  #          
 #                                                                         #
 #    throught simply opening:  https://github.com/xylokopa/Fy-Nance       #
 #                                                                         #
 ###########################################################################
 #                                                                         #
-#               If you like it more complicated, enter :                  #
+#               If you want to reach the README.md directly, enter :      #
 #                                                                         #
 #          Github.com/xylokopa/Fy-Nance/blob/main/README.md               #
 #                                                                         #                                                                                    
@@ -19,7 +19,7 @@
 #                       to run the software                               #                                                                                    
 ###########################################################################
 #                                                                         #                                                                                    
-#   Do not forget, if you like it easy and smooth , to install GIT        #                                                                                    
+#          Please install GIT, if you want full functionalty              #                                                                                    
 #                                                                         #                                                                                    
 #   After that , create a local playground in your Jupyter-Folder ,       #                                                                                    
 #                                                                         #                                                                                    
@@ -31,11 +31,7 @@
 #                                                                         #                                                                                    
 ###########################################################################
 #                                                                         #                                                                                    
-#    If you are curious ( I hope you are ) go and read the README !       #                                                                                    
-#                                                                         #                                                                                    
-###########################################################################
-#                                                                         #                                                                                    
-#    If you don't have GIT , NO MATTER : THE README WILL GUIDE YOU        #                                                                                    
+#           If you don't have GIT , THE README WILL GUIDE YOU             #                                                                                    
 #                                                                         #                                                                                    
 ###########################################################################
 

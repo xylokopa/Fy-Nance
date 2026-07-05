@@ -1,7 +1,7 @@
 # prerequisites.py - REINER PREREQUISITES-TEST
 # Version 03 R.Wu_GastH_Nr178854
-# für alle nötigen importe
-print("⏳ Prüfe System-Voraussetzungen... Bitte warten...\n")
+# für alle noetigen importe
+print("Inspecting the Prerequisites of your installation... Please Wait...\n")
 try:
     import math
     import numpy as np
@@ -20,19 +20,20 @@ try:
     # Test, ob deutsche Formatierung auf dem PC 
     locale.setlocale(locale.LC_TIME, "de_DE")
     print("==========================================================")
-    print("✅ ALLES OK ! Die nötigen Pakete sind installiert.")
-    print("Das System ist bereit für den Börsen-Oszillographen.")
+    print("YOUR SYSTEM IS OK ! The necessary imports are available.")
+    print("Das System ist bereit fuer den Boersen-Oszillographen.")
     print("==========================================================")
 except ModuleNotFoundError as e:
     # Fehlerfalle, sobald IDLE läuft
     print("==========================================================")
-    print(f"❌ FEHLER: Dir fehlt ein wichtiges Paket!")
+    print(f"ERROR: You have to download necessary packages!")
     print(f"   {e}")
-    print("\n👉 REPARATUR-BEFEHL FÜR DEINE CMD:")
+    print("\nREPAIR-INSTRUCTION for your download via CMD:")
     print("   pip install numpy pandas matplotlib scipy statsmodels yfinance")
     print("==========================================================")
 except locale.Error:
-    print("⚠️ HINWEIS : deutsche Locale ('de_DE') nicht aktiv.")
-    print("   Skript läuft,aber Datumsformate können abweichen.")
-input("\n[ENTER zum Schließen des Prerequisites-Tests]")
+    print("HINWEIS : deutsche Locale ('de_DE') nicht aktiv.")
+    print("   Skript laeuft,aber Datumsformate koennen abweichen.")
+input("\n[ENTER zum Schliessen des Prerequisites-Tests]\n"+
+       " [Press ENTER to exit the prerequisites-test]")
 
