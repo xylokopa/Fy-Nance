@@ -2,7 +2,7 @@ print(r"########################################################################
 print(r"#                                                                         #")
 print(r"#  Before running the scripts, please read the informations given to you  #")          
 print(r"#                                                                         #")
-print(r"#    throught simply opening:  https://github.com/xylokopa/Fy-Nance       #")
+print(r"#    by simply opening:     https://github.com/xylokopa/Fy-Nance          #")
 print(r"#                                                                         #")
 print(r"###########################################################################")
 print(r"#                                                                         #")
