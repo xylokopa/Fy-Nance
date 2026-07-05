@@ -5,11 +5,11 @@
 #                                                                         #                                                                                    
 #        or:  https://github.com/xylokopy/Fy-Nance/README.md              #
 #                                                                         #
-#        or:  https://github.com/fylokopa            because                        #                                                                                    
+#        or:  https://github.com/xylokopa       just because                        #                                                                                    
 #                                                                         #                                                                                    
 #        without the subsequent indications, it will impossible           #                                                                                    
 #                                                                         #                                                                                    
-#                    to run the software                                  #                                                                                    
+#                       to run the software                               #                                                                                    
 ###########################################################################
 #                                                                         #                                                                                    
 #                                                                         #                                                                                    
