@@ -1,9 +1,16 @@
 ###########################################################################
+#                                                                         #
 #  Before running the scripts please read the informations given to you   #          
 #                                                                         #
-#  throught:  https://github.com/xylokopa/Fy-Nance/blob/main/README.md    #
+#    throught simply opening:  https://github.com/xylokopa/Fy-Nance       #
+#                                                                         #
+###########################################################################
+#                                                                         #
+#               If you like it more complicated, enter :                  #
+#                                                                         #
+#          Github.com/xylokopa/Fy-Nance/blob/main/README.md               #
 #                                                                         #                                                                                    
-#             or just walk in, if you are a GitHubber, and look around    #
+#       or just walk in, if you are a GitHubber, and look around          #
 #                                                                         #
 #             https://github.com/xylokopa       just because              #                                                                                    
 #                                                                         #                                                                                    
