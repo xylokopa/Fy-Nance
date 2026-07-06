@@ -7,8 +7,8 @@
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
 | **02Apple_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
-| **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel 1 jupyter Notebook|
-| **Fliesenleger.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | Übungsbeispiel 2 jupyter Notebook|
+| **Fliesenleger.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | Übungsbeispiel 1 jupyter Notebook|
+| **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel 2 jupyter Notebook|
 | **Notebook-Prerequisites** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | jupyter Notebook Prerequisites|
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Python-Code Prerequisites |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
