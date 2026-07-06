@@ -1,6 +1,6 @@
 # prerequisites.py - REINER PREREQUISITES-TEST
 # Version 03 R.Wu_GastH_Nr178854
-# für alle noetigen importe
+# fuer alle noetigen importe
 print("Inspecting the Prerequisites of your installation... Please Wait...\n")
 try:
     import math
