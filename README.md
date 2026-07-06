@@ -17,7 +17,7 @@
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png?raw=true) | Screencopy wenn alles OK |
 | **WORTSCHATZ** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/WORTSCHATZ.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | **STATISTIK** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/STATISTICS.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/STATISTICS.PNG?raw=true) | Auswertungsbeispiel |
-| **DISKUSSION** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/KS-LI-SW.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
+| **DISKUSSION** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/KS-LI-SW.pdf) | Geöffnete PDF direkt herunterladen | MESS-ERGEBNISSE PDF |
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | :--- | :---: | :---: | :---: | :--- |
