@@ -28,7 +28,6 @@
 | :--- | :---: | :---: | :---: | :--- |
 | **Ticker-Liste_alt.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/Ticker-Liste_alt.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/Ticker-Liste_alt.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
-| **00Allianz_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/00Allianz_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/00Allianz_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **01Alstom_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/01Alstom_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/01Alstom_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **03Basf_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/03Basf_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/03Basf_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
 | **04BlackRock1_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/04BlackRock1_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/04BlackRock1_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
