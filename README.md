@@ -10,6 +10,7 @@
 | **Fliesenleger.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | Übungsbeispiel 1 jupyter Notebook|
 | **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel 2 jupyter Notebook|
 | **Notebook-Prerequisites** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | jupyter Notebook Prerequisites|
+| **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | Python-Code Übungsbeispiel 2 |
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Python-Code Prerequisites |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
