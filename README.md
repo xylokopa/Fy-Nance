@@ -13,7 +13,6 @@
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Python-Code Prerequisites |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
-| **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | Übungsbeispiel Python-Code |
 | **BILD-AUSSCHNITT** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png?raw=true) | Screencopy wenn alles OK |
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png?raw=true) | Screencopy wenn alles OK |
 | **WORTSCHATZ** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/WORTSCHATZ.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
