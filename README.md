@@ -3,7 +3,7 @@
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/CMD-GIT-CLONE.PNG?raw=true" alt="CMD-GIT-CLONE" width="100%">
 </div>
 <div align="center">
-  <a href="README2.md" target="_blank">Zu README2</a>
+  <a href="README2.md" target="_blank">Zum Verzeichnis der restlichen Ticker-Daten im CSV-Format</a>
 </div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
