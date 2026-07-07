@@ -2,6 +2,9 @@
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/CMD-GIT-CLONE.PNG?raw=true" alt="CMD-GIT-CLONE" width="100%">
 </div>
+<div align="center">
+  <a href="README.md" target="_blank">Zum README-Hauptmenu</a>
+</div>
 ### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
