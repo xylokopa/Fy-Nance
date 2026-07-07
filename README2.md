@@ -1,7 +1,7 @@
 <div align="center">
   <a href="README.md" target="_blank">Zum README-Hauptmenu</a>
 </div>
-### 🛠️ Fy-Nance: Projekt-Ticker-DAten im CSV-Format
+### 🛠️ Fy-Nance: Projekt-Ticker-Daten im CSV-Format
 
 | OFFLINE-DATEN / CSV | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
