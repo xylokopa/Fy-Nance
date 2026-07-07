@@ -25,7 +25,6 @@
 | **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
 | **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
 | :--- | :---: | :---: | :---: | :--- |
-| :----- | :-----: | :-----: | :-----: | :----- |
 | :--- | :---: | :---: | :---: | :--- |
 <div align="center">
   <a href="README2.md" target="_blank">Zum Verzeichnis der restlichen Ticker-Daten im CSV-Format</a>
