@@ -1,0 +1,28 @@
+<div align="center">
+  <a href="README2.md" target="_blank">Zum Verzeichnis der restlichen Ticker-Daten im CSV-Format</a>
+</div>
+### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
+
+| Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
+| :--- | :---: | :---: | :---: | :--- |
+| **02Apple_Offline.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/02Apple_Offline.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/02Apple_Offline.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
+| **Fliesenleger.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Fliesenleger.ipynb) | Übungsbeispiel 1 jupyter Notebook|
+| **AAPL_Beispiel.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.ipynb) | Übungsbeispiel 2 jupyter Notebook|
+| **Notebook-Prerequisites** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Notebook-prerequ.ipynb) | jupyter Notebook Prerequisites|
+| **AAPL_Beispiel.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/AAPL_Beispiel.py) | Python-Code Übungsbeispiel 2 |
+| **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt_prerequisites.py) | Python-Code Prerequisites |
+| **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
+| **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/BOszi_Projekt.py) | Hauptprogramm Python-Code |
+| **BILD-AUSSCHNITT** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/figur0-1.png?raw=true) | Screencopy wenn alles OK |
+| **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/250402-260618.png?raw=true) | Screencopy wenn alles OK |
+| **WORTSCHATZ** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/WORTSCHATZ.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
+| **STATISTIK** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/STATISTICS.PNG) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/STATISTICS.PNG?raw=true) | Auswertungsbeispiel |
+| **DISKUSSION** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/KS-LI-SW.pdf) | Geöffnete PDF direkt herunterladen | MESS-ERGEBNISSE PDF |
+| **BOszi_03.pdf** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/BOszi_03.pdf) | Geöffnete PDF direkt herunterladen | Python-Script komplett-Doku PDF |
+| **PCA-Dokumentation** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PCA-Data-ressources.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
+| :--- | :---: | :---: | :---: | :--- |
+| :--- | :---: | :---: | :---: | :--- |
+<div align="center">
+  <a href="README2.md" target="_blank">Zum Verzeichnis der restlichen Ticker-Daten im CSV-Format</a>
+</div>
+

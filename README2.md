@@ -1,5 +1,8 @@
 <div align="center">
-  <a href="README.md" target="_blank">Zum README-Hauptmenu</a>
+  <a href="README.md" target="_blank">Zum README-Hauptmenu mit Titelbild</a>
+</div>
+<div align="center">
+  <a href="README3.md" target="_blank">Zum README-Hauptmenu ohne Titelbild</a>
 </div>
 ### 🛠️ Fy-Nance: Projekt-Ticker-Daten im CSV-Format
 
