@@ -1,8 +1,6 @@
 <div align="center">
   <a href="README.md" target="_blank">Zum README-Hauptmenu</a>
 </div>
-### 🛠️ Fy-Nance: Projekt-Ticker-DAten im CSV-Format
-
 | OFFLINE-DATEN / CSV | Typ | LINKE MAUSTASTE nur zum betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
 | **Ticker-Liste_alt.csv** | `CSV` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/Ticker-Liste_alt.csv) | [📥](https://raw.githubusercontent.com/xylokopa/Fy-Nance/refs/heads/main/Ticker-Liste_alt.csv) | hier die Endung VON HAND auf .csv SETZEN ! |
