@@ -1,9 +1,6 @@
 <div align="center">
   <a href="README2.md" target="_blank">Zum Verzeichnis der restlichen Ticker-Daten im CSV-Format</a>
 </div>
-<div align="center">
-  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/PNG/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
-</div>
 ### 🛠️ Fy-Nance: TESTREADME.md mit Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
