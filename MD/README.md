@@ -4,7 +4,7 @@
 <div align="center">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/PNG/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
 </div>
-### 🛠️ Fy-Nance: TESTREADME.md mit Projekt-Komponenten in Reihenfolge der Download-Präferenz
+### 🛠️ Fy-Nance: Projekt-Komponenten in Reihenfolge der Download-Präferenz
 
 | Komponente / Baustein | Typ | LINKE MAUSTASTE nur betrachten... | RECHTE MAUSTASTE Link speichern unter... | Beschreibung |
 | :--- | :---: | :---: | :---: | :--- |
