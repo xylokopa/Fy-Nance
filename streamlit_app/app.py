@@ -19,7 +19,9 @@ import streamlit as st
 st.set_page_config(layout="wide", page_title="Börsen-Oszillograph")
 
 OSZ = 'Oszi_03n'
-CSV_ORDNER = "csv"  # Relativer Datenraum: ./csv/
+AKTUELLER_ORDNER = os.path.dirname(os.path.abspath(__file__))
+CSV_ORDNER = os.path.join(AKTUELLER_ORDNER, "CSV")
+# anstatt CSV_ORDNER = "CSV"  # Relativer Datenraum: ./csv/
 
 # Lokale Zeiteinstellung initialisieren
 try:
