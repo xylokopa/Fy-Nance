@@ -15,8 +15,8 @@ import os
 import locale
 import streamlit as st
 
-# Seite für breites Web-Layout konfigurieren
-st.set_page_config(layout="wide", page_title="Börsen-Oszillograph")
+# Seite fUer breites Web-Layout konfigurieren
+st.set_page_config(layout="wide", page_title="Boersen-Oszillograph")
 
 OSZ = 'Oszi_03n'
 AKTUELLER_ORDNER = os.path.dirname(os.path.abspath(__file__))
@@ -68,25 +68,43 @@ if not os.path.exists('Ticker-Liste_alt.csv'):
 ticker_df = pd.read_csv('Ticker-Liste_alt.csv')
 
 # ==============================================================================
-# TEIL 2: STREAMLIT UI (SIDEBAR - ERSATZ FÜR MATPLOTLIB WIDGETS)
+# TEIL 2: STREAMLIT UI (SIDEBAR - ERSATZ FUER MATPLOTLIB WIDGETS)
 # ==============================================================================
-st.sidebar.header("📊 Steuerung & Parameter")
+st.sidebar.header("Steuerung & Parameter")
 
-# Ticker-Auswahl (Ersatz für das 26-Tasten Ticker-Klavier)
 ticker_options = [f"{row['Num']:02d} - {row['Nam']} ({row['Tik']})" for _, row in ticker_df.iterrows()]
-ausgewaehlter_ticker_str = st.sidebar.selectbox("Ticker-Klavier (Auswahl)", ticker_options, index=2) 
+
+# WICHTIG: Variablen initialisieren
+if 'hist_bak' not in st.session_state:
+    st.session_state.hist_bak = []
+if 'hist_vor' not in st.session_state:
+    st.session_state.hist_vor = []
+if 'aktueller_ticker_index' not in st.session_state:
+    st.session_state.aktueller_ticker_index = 2
+if 'letzter_ticker' not in st.session_state:
+    st.session_state.letzter_ticker = 2
+if 'button_klick_aktiv' not in st.session_state:
+    st.session_state.button_klick_aktiv = False
+
+# Ticker-Auswahl
+ausgewaehlter_ticker_str = st.sidebar.selectbox(
+    "Ticker-Klavier (Auswahl)", 
+    ticker_options, 
+    index=st.session_state.aktueller_ticker_index
+) 
+
 akt_index = ticker_options.index(ausgewaehlter_ticker_str)
 akt_ticker = ticker_df.iloc[akt_index]
 
-# Online / Offline Betriebsmodus (Ehemaliger ax_online Schalter)
+# Online / Offline Betriebsmodus
 val_online = st.sidebar.radio("Betriebsmodus", ["Offline (Lokale CSV)", "Online (Yahoo Live)"])
 
-# Kalendarische Zeitfenster (Ehemalige Textboxen & Slider-Zustand FEST)
+# Kalendarische Zeitfenster
 st.sidebar.subheader("Zeitfenster (Zustand: FEST)")
 start_date = st.sidebar.date_input("Anfang (ANF_DAT)", date(2015, 1, 2))
 end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026, 7, 5))
 
-# Dynamische Diagnose-Schalter (Ehemalige Buttons diag2, diag3, diag4)
+# Dynamische Diagnose-Schalter
 st.sidebar.subheader("Anzeige-Optionen (Semaphoren)")
 moving_size = st.sidebar.slider("Moving-Average Fenster", min_value=5, max_value=150, value=20)
 preis_linie = st.sidebar.checkbox("Preis-Linie ein", value=True)
@@ -95,37 +113,46 @@ FEmiw_linie = st.sidebar.checkbox("Fenster-Mittelwert", value=False)
 diffz_linie = st.sidebar.checkbox("Diffz-Dichte (Statistik)", value=True)
 FFT_Diagram = st.sidebar.checkbox("FFT-Perioden (Fourier Spectrum)", value=False)
 
-# ==============================================================================
-# TEIL 3: HISTORY-LOGBUCH (NAVIGATION ÜBER SESSION STATE)
-# ==============================================================================
-if 'hist_bak' not in st.session_state:
-    st.session_state.hist_bak = []
-if 'hist_vor' not in st.session_state:
-    st.session_state.hist_vor = []
-if 'letzter_ticker' not in st.session_state:
-    st.session_state.letzter_ticker = akt_index
 
-# Erkennung eines Tickerwechsels zur automatischen Aufzeichnung in die History
+# ==============================================================================
+# TEIL 3: HISTORY-LOGBUCH (NAVIGATION UEBER SESSION STATE)
+# ==============================================================================
+
+# Erkennung der Ticker-Herkunft
 if st.session_state.letzter_ticker != akt_index:
-    st.session_state.hist_bak.append((st.session_state.letzter_ticker, start_date, end_date))
-    st.session_state.hist_vor.clear()
+    if st.session_state.button_klick_aktiv:
+        # Der Wechsel kam durch einen Button -> Historie NICHT löschen!
+        st.session_state.button_klick_aktiv = False
+    else:
+        # Manueller Klick im Dropdown -> In Rückwärts-History speichern, Vorwärts löschen
+        st.session_state.hist_bak.append((st.session_state.letzter_ticker, start_date, end_date))
+        st.session_state.hist_vor.clear()
+    
+    st.session_state.aktueller_ticker_index = akt_index
     st.session_state.letzter_ticker = akt_index
 
 st.sidebar.subheader("Navigation History")
 col1, col2 = st.sidebar.columns(2)
+
 with col1:
-    if st.button("⬅️ Zurück", disabled=len(st.session_state.hist_bak) == 0):
+    if st.button("<< Zurueck <<", disabled=len(st.session_state.hist_bak) == 0):
         ziel_idx, ziel_start, ziel_end = st.session_state.hist_bak.pop()
         st.session_state.hist_vor.append((akt_index, start_date, end_date))
-        st.session_state.letzter_ticker = ziel_idx
-        st.rerun()
-with col2:
-    if st.button("Vorwärts ➡️", disabled=len(st.session_state.hist_vor) == 0):
-        ziel_idx, ziel_start, ziel_end = st.session_state.hist_vor.pop()
-        st.session_state.hist_bak.append((akt_index, start_date, end_date))
+        
+        st.session_state.button_klick_aktiv = True
+        st.session_state.aktueller_ticker_index = ziel_idx
         st.session_state.letzter_ticker = ziel_idx
         st.rerun()
 
+with col2:
+    if st.button(">> Vor >>", disabled=len(st.session_state.hist_vor) == 0):
+        ziel_idx, ziel_start, ziel_end = st.session_state.hist_vor.pop()
+        st.session_state.hist_bak.append((akt_index, start_date, end_date))
+        
+        st.session_state.button_klick_aktiv = True
+        st.session_state.aktueller_ticker_index = ziel_idx
+        st.session_state.letzter_ticker = ziel_idx
+        st.rerun()
 # ==============================================================================
 # TEIL 4: DATEN-LADEENGINE (MIT CACHING-OPTIMIERUNG)
 # ==============================================================================
@@ -144,20 +171,20 @@ def lade_ticker_daten(num_str, name, ticker_str, modus_wahl, _start, _end):
         except Exception as e:
             st.sidebar.error(f"Live-Download gescheitert! Wechsle to Offline.")
             
-    # Pfad zum "CSV/" Unterordner auflösen
+    # Pfad zum "CSV/" Unterordner aufloesen
     csv_name = f"{int(num_str):02d}{name}_Offline.csv"
     pfad_zur_csv = os.path.join(CSV_ORDNER, csv_name)
     
     if os.path.exists(pfad_zur_csv):
         df_csv = pd.read_csv(pfad_zur_csv)
         df_csv['Date'] = pd.to_datetime(df_csv['Date'])
-        # HIER: Kein vorzeitiger Filter mehr, wir geben das ganze DataFrame zurück!
+        # HIER: Kein vorzeitiger Filter mehr, wir geben das ganze DataFrame zurUeck!
         return df_csv.sort_values('Date').reset_index(drop=True)
     else:
         return pd.DataFrame(columns=['Date', 'Price'])
 
 # ==============================================================================
-# TEIL 5: HILFSFUNKTIONEN FÜR SKALIERUNG & ZEITFENSTER
+# TEIL 5: HILFSFUNKTIONEN FUER SKALIERUNG & ZEITFENSTER
 # ==============================================================================
 def axen_skalierung(target_ax, df_zeitfen, target_ax_name=""):
     if df_zeitfen.empty: return
@@ -165,7 +192,7 @@ def axen_skalierung(target_ax, df_zeitfen, target_ax_name=""):
     dt_end = pd.Timestamp(df_zeitfen['Date'].iloc[-1])
     target_ax.set_xlim(dt_start, dt_end)
     
-    if target_ax_name != '3Win':  # Keine Preis-Skalierung für FFT-Log
+    if target_ax_name != '3Win':  # Keine Preis-Skalierung fuer FFT-Log
         target_ax.set_ylim(df_zeitfen['Price'].min() * 0.95, df_zeitfen['Price'].max() * 1.05)
 
     if target_ax_name == '4Win':
@@ -194,23 +221,13 @@ def axen_skalierung(target_ax, df_zeitfen, target_ax_name=""):
             target_ax.grid(True, which='major', linestyle='--')
     plt.setp(target_ax.get_xticklabels(), rotation=0, ha='center')
 
-def zeitfenst(df_input):
-    if df_input.empty:
-        return df_input, 0, 0, pd.Timestamp.now(), pd.Timestamp.now(), "", ""
-    df_zeitfenst = df_input.copy()
-    dt_start = pd.Timestamp(df_zeitfenst['Date'].values[0])
-    dt_end = pd.Timestamp(df_zeitfenst['Date'].values[-1])
-    s_start = dt_start.strftime('%Y-%m-%d')
-    s_end = dt_end.strftime('%Y-%m-%d')
-    return df_zeitfenst, 0, len(df_input)-1, dt_start, dt_end, s_start, s_end
-
 def axen_skalierung(target_ax, df_zeitfen, target_ax_name=""):
     if df_zeitfen.empty: return
     dt_start = pd.Timestamp(df_zeitfen['Date'].iloc[0])
     dt_end = pd.Timestamp(df_zeitfen['Date'].iloc[-1])
     target_ax.set_xlim(dt_start, dt_end)
     
-    if target_ax_name != '3Win':  # Keine Preis-Skalierung für FFT-Log
+    if target_ax_name != '3Win':  # Keine Preis-Skalierung fUer FFT-Log
         target_ax.set_ylim(df_zeitfen['Price'].min() * 0.95, df_zeitfen['Price'].max() * 1.05)
 
     if target_ax_name == '4Win':
@@ -255,41 +272,41 @@ def Bewertung_popup(target_ax, n, lf_stat, lf_p, lf_Hyp, sw_stat, sw_p, sw_Hyp, 
     if n < 30:
         sample_class = "KLEINE STICHPROBE"
         grenzwert_text = "N/A"
-        kommentar = "Geringe statistische Aussagekraft!\nVerteilungstests bei n < 30 sehr ungenau.\nPrimär visuelles Histogramm nutzen."
+        kommentar = "Geringe statistische Aussagekraft!\nVerteilungstests bei n < 30 sehr ungenau.\nPrimaer visuelles Histogramm nutzen."
     elif 30 <= n <= 250:
         sample_class = "MITTLERE STICHPROBE (Optimaler Bereich)"
         grenzwert_text = f"{0.886 / np.sqrt(n):.4f}"
-        kommentar = "Stichprobe im opt.mathem.Fenster.\nTestergebnissen mit hoher Verlässlichkeit\nund direkter Aussagekraft."
+        kommentar = "Stichprobe im opt.mathem.Fenster.\nTestergebnissen mit hoher Verlaesslichkeit\nund direkter Aussagekraft."
     else:
-        sample_class = "GROSSE STICHPROBE (Hohe Sensitivität)"
+        sample_class = "GROSSE STICHPROBE (Hohe Sensitivitaet)"
         grenzwert_text = f"{0.886 / np.sqrt(n):.4f}"
-        kommentar = (f"BEM: Bei n={n} greift das Schärfe-Paradoxon.\nTest bestraft kleinste Abweichungen. "
-                     f"Trotz Ablehnung\nzeigt Shapiro-Wilk ({sw_stat*100:.1f}%), dass die dMA-Grundform\n"
-                     f"im Kernbereich stabil der Gauß-Kurve folgt.")
+        kommentar = (f"BEM:\n\nBei n={n} greift das Schaerfe-Paradoxon.\n\nTest bestraft kleinste Abweichungen.\n\n"
+                     f"Trotz Ablehnung zeigt Shapiro-Wilk ({sw_stat*100:.1f}%),\n\ndass die dMA-Grundform "
+                     f"im Kernbereich\n\nstabil der Gauss-Kurve folgt.")
 
     lf_Hyp_text = "Annahme (Normalverteilt)" if lf_p > 0.05 else "Ablehnung"
     sw_Hyp_text = "Annahme (Normalverteilt)" if sw_p > 0.05 else "ABGELEHNT"  
 
     report_text = (
         f"{Nam} ({sample_class})\n"
-        f"Effekt. Handelstage: n = {n}\n"
-        f"Lilliefors-Zufallstoleranz: {grenzwert_text}\n"
-        f"--------------------------------------------------------\n"
-        f"1. LILLIEFORS-TEST\n  (KS-Korrektur f.geschätztes Mu/Sigma)\n\n"
+        f"\nEffekt. Handelstage: n = {n}\n"
+        f"\nLilliefors-Zufallstoleranz: {grenzwert_text}\n"
+        f"-----------------------------------------------\n\n"
+        f"1. LILLIEFORS-TEST\n  (KS-Korrektur f.geschaetztes Mu/Sigma)\n\n"
         f"- Teststatistik (D): {lf_stat:.4f}\n"
         f"- p-Wert:            {lf_p:.4f}\n"
         f"- H0-Entscheidung:   {lf_Hyp_text}\n\n"
-        f"2. SHAPIRO-WILK-TEST (Symmetrie & Formprüfung)\n\n"
-        f"- Teststatistik (W): {sw_stat:.4f} (Ähnlichkeit:{sw_stat*100:.1f}%)\n"
+        f"2. SHAPIRO-WILK-TEST (Symmetrie & Formpruefung)\n\n"
+        f"- Teststatistik (W): {sw_stat:.4f} (Aehnlichkeit:{sw_stat*100:.1f}%)\n"
         f"- p-Wert:            {sw_p:.4f}\n"
         f"- H0-Entscheidung:   {sw_Hyp_text}\n"
-        f"--------------------------------------------------------\n"
+        f"-----------------------------------------------\n"
         f"FAZIT FINANZANALYSE:\n\n{kommentar}"
     )
     target_ax.axis('off')  
-    target_ax.text(0.00, 1.0, report_text, transform=target_ax.transAxes, fontsize=7.5, verticalalignment='top',
+    target_ax.text(0.00, 1.0, report_text, transform=target_ax.transAxes, fontsize=13, verticalalignment='top',
                               fontfamily='monospace')
-
+  
 
 # ==============================================================================
 # TEIL 7: CORE MATHEMATICAL MOSAIC PLOTTER ENGINE (CHARTS & GRAPHICS)
@@ -302,13 +319,16 @@ def generiere_mosaik(df_input, akt_ticker, config):
     df_zeitfenst, id_von, id_bis, dt_start, dt_end, s_start, s_end = zeitfenst(df_eff)
     if df_zeitfenst.empty: return None
 
-    layout = [['.', '3Win', '1Win', '1Win', '4Win'],
-              ['.', '2Win', '1Win', '1Win', '5Win'],
-              ['.', '.', '.', '.', '.']]
+
+    layout = [['2Win', '2Win', '3Win', '3Win', '4Win'],
+              ['1Win', '1Win', '1Win', '5Win', '5Win'],
+              ['1Win', '1Win', '1Win', '5Win', '5Win'],
+              ['1Win', '1Win', '1Win', '5Win', '5Win']]
     
-    fig, axd = plt.subplot_mosaic(layout, figsize=(15, 8), gridspec_kw={'width_ratios': [0.525, 1.25, 1.0, 1.0, 1.25],
-                                                              'height_ratios': [1.0, 1.0, 0.5]}, layout='constrained')
-    
+    fig, axd = plt.subplot_mosaic(layout, figsize=(15, 10),
+               gridspec_kw={'width_ratios': [1.25, 1.25, 1.25, 1.25, 1.25],
+                           'height_ratios': [1.5, 1.5, 1.5, 1.5]}, layout='constrained')
+
     ax = axd['1Win']
     ax2 = axd['2Win']
     ax3 = axd['3Win']
@@ -326,7 +346,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
     if config['FEmiw_linie']: ax.plot(df_eff['Date'], [ma_mittelwert]*len(df_eff), label='Fenster-MW', color='black', linestyle='--')
     if config['diffz_linie']: ax.plot(df_eff['Date'], ma_mittelwert + df_eff['Diff'], label='diffz zentriert', color='red')
     
-    ax.set_ylabel('Preis in €')
+    ax.set_ylabel('Preis in Eu')
     ax.grid(True, linestyle='--')
     ax.legend(loc='upper left', fontsize=8)
     axen_skalierung(ax, df_zeitfenst, '1Win')
@@ -340,7 +360,10 @@ def generiere_mosaik(df_input, akt_ticker, config):
         alpha = 0.05
         n_stat = len(diff_data)
 
-        ks_stat, ks_p = stats.kstest(diff_data, 'norm', args=(mu, sigma))
+        # ks_stat, ks_p = stats.kstest(diff_data, 'norm', args=(mu, sigma))
+        # Wir erstellen erst die fertige Kurve und jagen sie dann in den Test
+        norm_verteilung = stats.norm(loc=mu, scale=sigma)
+        ks_stat, ks_p = stats.kstest(diff_data, norm_verteilung.cdf)
         ks_Hyp = 1 if ks_p > alpha else 0
         lf_stat, lf_p = sm.stats.lilliefors(diff_data, dist='norm')
         lf_Hyp = 1 if lf_p > alpha else 0
@@ -386,7 +409,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
     ax4.plot(df_zeitfenst['Date'], df_zeitfenst['Price'], color='red', linewidth=1.5, label='Preis')
     ax4.plot(df_zeitfenst['Date'], df_zeitfenst['miwe'], color='black', linestyle=':', label='MiWe')
     ax4.plot(df_zeitfenst['Date'], df_zeitfenst['diffz'], color='blue', alpha=0.7, label='Diffz')
-    ax4.set_title("Kachel 4: dMA-Überblick", fontsize=8, fontweight='bold')
+    ax4.set_title("Kachel 4: dMA-Ueberblick", fontsize=8, fontweight='bold')
     ax4.legend(fontsize=7, loc='upper left')
     axen_skalierung(ax4, df_zeitfenst, '4Win')
 
@@ -400,7 +423,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
 df_roh = lade_ticker_daten(f"{akt_ticker['Num']}", akt_ticker['Nam'], akt_ticker['Tik'], val_online, start_date, end_date)
 
 if not df_roh.empty:
-    # Hier filtern wir das geladene DataFrame live auf deine Eingabe aus der Sidebar!
+    # filtern des geladenen DataFrame live nach Eingabe aus der Sidebar
     df = df_roh[(df_roh['Date'] >= pd.to_datetime(start_date)) & (df_roh['Date'] <= pd.to_datetime(end_date))].reset_index(drop=True)
     
     if not df.empty:
@@ -415,6 +438,6 @@ if not df_roh.empty:
             with st.expander("🔍 Letzte 50 Handelstage als Rohdatentabelle einsehen"):
                 st.dataframe(df.tail(50), use_container_width=True)
     else:
-        st.error(f"Keine Daten im gewählten Zeitraum von {start_date} bis {end_date} in der Datei vorhanden.")
+        st.error(f"Keine Daten im gewaehlten Zeitraum von {start_date} bis {end_date} in der Datei vorhanden.")
 else:
     st.error(f"Keine passenden historischen Daten im Ordner '{CSV_ORDNER}/' oder via Yahoo gefunden.")
