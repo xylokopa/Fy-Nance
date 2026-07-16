@@ -328,26 +328,25 @@ def generiere_mosaik(df_input, akt_ticker, config):
         mu, sigma = np.mean(diff_data), np.std(diff_data)
         alpha = 0.05
         n_stat = len(diff_data)
-        # ks_stat, ks_p = stats.kstest(diff_data, 'norm', args=(mu, sigma))
         # erstellt fertige Kurve und testet sie
         norm_verteilung = stats.norm(loc=mu, scale=sigma)
         ks_stat, ks_p = stats.kstest(diff_data, norm_verteilung.cdf)
-        ks_Hyp = 1 if ks_p > alpha else 0
+        ks_Hyp = 1 if ks_p > alpha else 0 # Monte-Carlo-Rauschabstand mehr als 5% => KEIN K.S-Gauss
         lf_stat, lf_p = sm.stats.lilliefors(diff_data, dist='norm')
-        lf_Hyp = 1 if lf_p > alpha else 0
+        lf_Hyp = 1 if lf_p > alpha else 0 # Monte-Carlo-Rauschabstand mehr als 5% => KEIN L.F-Gauss
         sw_stat, sw_p = stats.shapiro(diff_data)
-        sw_Hyp = 1 if sw_p > alpha else 0
+        sw_Hyp = 1 if sw_p > alpha else 0 # Monte-Carlo-Rauschabstand mehr als 5% => KEIN S.W-Gauss
         if config['diffz_linie']:
             Bewertung_popup(ax5, n_stat, lf_stat, lf_p, lf_Hyp, sw_stat, sw_p, sw_Hyp, akt_ticker['Nam'])
         if config['MAmiw_linie']:
             count, bins, ignored = ax2.hist(diff_data, bins=30, density=True, alpha=0.6, color='blue', label=f"{akt_ticker['Tik']}/dMA")
             if config['diffz_linie']:
-                ax2.set_title(f'n:{n_stat} KS:{ks_Hyp}/LF:{lf_Hyp}/SW:{sw_Hyp}', fontsize=8, fontweight='bold')
+                ax2.set_title(f'n:{n_stat} p>5%.Soft-NoGauss-Test(1=ja/0=nein) KS:{ks_Hyp} / LF:{lf_Hyp} / SW:{sw_Hyp}', fontsize=8, fontweight='bold')
                 gauss = stats.norm.pdf(bins, mu, sigma)
-                ax2.plot(bins, gauss, color='red', linewidth=1.5, label=f'Gauss (Abw: {ks_stat:.2f})')
+                ax2.plot(bins, gauss, color='red', linewidth=1.5, label=f'Gauss.Dichte\n(D ={ks_stat:.4f})')
                 ax2.legend(fontsize=7)
                 ax2.grid(True, linestyle='--')
-        fft_werte = np.fft.fft(diff_data)
+        fft_werte = np.fft.fft(diff_data)   
         halbe = len(diff_data) // 2
         freq = np.fft.fftfreq(len(diff_data))[:halbe]
         amp = np.abs(fft_werte)[:halbe]
@@ -467,11 +466,11 @@ def generiere_mosaik(df_input, akt_ticker, config):
     ax4.clear()  # Säubert Achse vor dem Neuzeichnen
     # Titel anpassen, damit man sieht, wer eingefroren ist
     v_name = st.session_state.get('vergleichs_ticker_name', akt_ticker['Nam'])
-    status_text = "FESTGEFROREN" if Freez_linie else "dMA-Überblick"
+    status_text = "Vergleichs-Ticker" if Freez_linie else "dMA-Überblick"
     # Die 3 Kennlinien plotten (Preis, MiWe, Diffz)
-    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['Price'], color='red', linewidth=1.5, label='Preis')
-    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['miwe'], color='black', linestyle=':', label='MiWe')
-    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['diffz'], color='silver', alpha=0.7, label='Diffz')
+    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['Price'], color='black', linewidth=1.5, label='Preis')
+    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['miwe'], color='red', linestyle=':', label='MiWe')
+    ax4.plot(df_plot_ax4['Date'], df_plot_ax4['diffz'], color='gray', alpha=0.7, label='Diffz')
     # Titel, Legende und deine Skalierungsfunktion anwenden
     ax4.set_title(f"Kachel 4: {status_text} [ {v_name} ]", fontsize=8, fontweight='bold')
     ax4.legend(fontsize=7, loc='upper left')
