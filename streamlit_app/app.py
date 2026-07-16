@@ -428,7 +428,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
                         ax3.text(0.05, 0.93, info_text, transform=ax3.transAxes,
                                  fontsize=10, fontfamily='monospace', fontweight='bold', va='top', ha='left',
                                  bbox=dict(boxstyle='round,pad=0.6', facecolor='wheat', alpha=0.25))             
-                        ax3.set_title("Kachel 3: EARTH MOVER'S DISTANCE (W1)", fontsize=10, fontweight='bold', color='darkred')
+                        ax3.set_title("Kachel 3: SCHAUFELBAGGER-DISTANZ (W1)", fontsize=10, fontweight='bold', color='darkred')
                     else:
                         ax3.text(0.5, 0.5, "N unzureichend", ha='center', va='center', fontsize=8)
                 except Exception as e:
