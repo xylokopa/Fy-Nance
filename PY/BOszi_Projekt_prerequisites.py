@@ -16,7 +16,8 @@ try:
     from datetime import datetime
     import os
     import csv
-    import locale  
+    import locale
+    import streamlit
     # Test, ob deutsche Formatierung auf dem PC 
     locale.setlocale(locale.LC_TIME, "de_DE")
     print("==========================================================")
@@ -29,7 +30,7 @@ except ModuleNotFoundError as e:
     print(f"FEHLER: Dir fehlt ein wichtiges Paket!")
     print(f"   {e}")
     print("\n REPARATUR-BEFEHL FÜR DEINE CMD:")
-    print("   pip install numpy pandas matplotlib scipy statsmodels yfinance")
+    print("   pip install numpy pandas matplotlib scipy statsmodels yfinance streamlit")
     print("==========================================================")
 except locale.Error:
     print("HINWEIS : deutsche Locale ('de_DE') nicht aktiv.")

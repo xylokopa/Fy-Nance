@@ -1,3 +1,4 @@
+# 001
 # BoersenOszi.py 16/28-06-2026 18h25 940.Z Version 03 R.Wu_GastH_Nr178854
 # Alle Importe
 import math
@@ -103,6 +104,7 @@ except FileNotFoundError:
     with open('Ticker-Liste_alt.csv', 'w') as f:
         f.write(ticker_liste)
     ticker_df = pd.read_csv('Ticker-Liste_alt.csv')
+# 107
 # ------------------------------------------------------------------------------
 #     03   zeitfenst-history anlegen
 # ------------------------------------------------------------------------------
@@ -195,7 +197,7 @@ for i in range(anzahl_ticker):
     btn_color = '#b0c4de' if i == akt_index else '#e1e1e1'
     btn = Button(ax_tick, btn_label, color=btn_color)
     btn.label.set_fontsize(10)  # typische Schriftgröße für gute Lesbarkeit
-    # ------------------------------------------------------------------------------
+# 200------------------------------------------------------------------------------
     ticker_klavier.append((btn, num_str, zeil['Nam'], zeil['Tik'], i))
     # ------------------------------------------------------------------------------
     schalter_handles.append(btn) # Schutz gegen Pythons Garbage Collector
@@ -295,6 +297,7 @@ def zeitfenst():
 def Bewertung_popup(n,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp,Nam):
   global fig5
   # Grenzziehung & Fallunterscheidung für den Text
+  # 300
   if n < 30:
     sample_class = "KLEINE STICHPROBE"
     grenzwert_text = "N/A"
@@ -397,7 +400,7 @@ def neu_zeichnen(id_von, id_bis):
           for sub_obj in obj:
               if hasattr(sub_obj, 'eventson'):
                   sub_obj.eventson = False
-  ###################################
+  # 403 #################################
 #-#
   try:
    akt_ticker = ticker_df.iloc[akt_index] # Zeilenwahl per integer 
@@ -494,7 +497,7 @@ def neu_zeichnen(id_von, id_bis):
        alpha = 0.05
        n_stat = len(diff_data)
        sqrt1n = 1/math.sqrt(n_stat)
-       # Bewertung_popup(n_stat,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp)
+       # 500 Bewertung_popup(n_stat,lf_stat,lf_p,lf_Hyp,sw_stat,sw_p,sw_Hyp)
        ks_stat, ks_p = stats.kstest(diff_data, 'norm', args=(mu, sigma))
        ks_Hyp = 1 if ks_p > alpha else 0
        lf_stat, lf_p = sm.stats.lilliefors(diff_data,dist='norm')
@@ -595,13 +598,13 @@ def neu_zeichnen(id_von, id_bis):
        if hasattr(obj, 'eventson'):
            obj.eventson = True
        elif isinstance(obj, tuple):
-           # Falls Tupel(vektor), Einzelomponenten einzeln stumm schalten
+       # 601 Falls Tupel(vektor), Einzelomponenten einzeln stumm schalten
            for sub_obj in obj:
                if hasattr(sub_obj, 'eventson'):
                    sub_obj.eventson = True
    ##################################
    trigger = False
-#------------------------------------------------------------------------------
+# 607 ---------------------------------------------------------------------------
 #      12   event-überwachung Ticker-Klavier am linken Rand 
 # ------------------------------------------------------------------------------
 def ticker_klavier_klick(num_str, name, ticker_str, button_index):
@@ -693,7 +696,7 @@ def on_clr_clicked(event):
 def on_online_clicked(event):
   global line_preis
   global val_online
-  # Modus umschalten
+  # 699 Modus umschalten
   if val_online > 0:
       val_online = 0
       btn_online.label.set_text("OFFLINE")
@@ -796,6 +799,7 @@ def diag4_click(event):
   global FEmiw_linie # Fenster-MiW Semaphor
   global diffz_linie # PreisMA-Dif Semaphor
   global FFT_Diagram # FFT-Spektrum(Log)
+  # 802
   preis_linie = 1    # ein
   MAmiw_linie = 1    # ein
   FEmiw_linie = 1    # ein
@@ -806,7 +810,7 @@ def diag4_click(event):
   status = 'Status:id_von= '+str(id_von)+' bis '+' id_bis= '+str(id_bis)
   neu_zeichnen(id_von,id_bis)
   # plt.show()
-# ------------------------------------------------------------------------------
+# 813 ----------------------------------------------------------------------------
 #      18          Aufruf 0 History-Tasten DATUM zurück DATUM vorwärts
 # ------------------------------------------------------------------------------
 def status_reset(ticker_idx, start_dt, end_dt):
@@ -898,7 +902,7 @@ def on_submit_end(text_input):
 #     20     Schleife zur event-überwachung aller Klaviertasten
 for btn_obj, n_str, nam, tik, b_idx in ticker_klavier:
     btn_obj.on_clicked(ticker_klavier_klick(n_str, nam, tik, b_idx))
-# ------------------------------------------------------------------------------
+# 905 ---------------------------------------------------------------------------
 btn_clr.on_clicked(on_clr_clicked)   # clr-Schalter abrufen
 schalter_handles.append(btn_clr)     # in aktive handles-Liste eintragen
 btn_online.on_clicked(on_online_clicked)  # online-Schalter abrufen
@@ -915,7 +919,7 @@ slider_von.on_changed(lambda v:neu_zeichnen(int(slider_von.val),int(slider_bis.v
 slider_bis.on_changed(lambda v:neu_zeichnen(int(slider_von.val),int(slider_bis.val)))
 text_box_start.on_submit(on_submit_start)   # Start-Datum abrufen
 text_box_end.on_submit(on_submit_end)       # Ende-Datum abrufen 
-# ------------------------------------------------------------------------------
+# 922----------------------------------------------------------------------------
 #     22 Initialisierung Widget-Liste Schaltersperren und History Startzustand
 # ------------------------------------------------------------------------------
 # (widget_event-Liste):
@@ -938,3 +942,4 @@ print(f"History Startwert registriert: {s_anf_init}")
 # ------------------------------------------------------------------------------
 neu_zeichnen(0, len(df)-1)
 plt.show()
+# 945
