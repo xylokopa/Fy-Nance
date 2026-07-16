@@ -340,7 +340,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
               ['1Win', '1Win', '1Win', '1Win', '5Win', '5Win']]
     fig, axd = plt.subplot_mosaic(layout, figsize=(15, 10.75),
                gridspec_kw={'width_ratios': [1.0, 1.0, 1.0, 1.0, 1.0, 1.5],
-                           'height_ratios': [1.0, 1.0, 1.0, 1.0]}, layout='constrained')
+                           'height_ratios': [1.25, 1.0, 1.0, 1.0]}, layout='constrained')
     ax = axd['1Win']
     ax2 = axd['2Win']
     ax3 = axd['3Win']
