@@ -1,4 +1,4 @@
-# fy-nance-app.streamlit.app.py 16-07-2026 546-Zeilen new-app_10Bootstrap_5.bak
+# fy-nance-app.streamlit.app.py 16-07-2026 514-Zeilen new-app_10Bootstrap_6.bak
 # ==============================================================================
 # TEIL 1: IMPORTE & PROJEKT-INITIALISIERUNG
 # ==============================================================================
@@ -207,38 +207,6 @@ except Exception as e:
 # ==============================================================================
 # TEIL 5: HILFSFUNKTIONEN FÜR SKALIERUNG & ZEITFENSTER
 # ==============================================================================
-#def axen_skalierung(target_ax, df_zeitfen, target_ax_name=""):
-#    if df_zeitfen.empty: return
-#    dt_start = pd.Timestamp(df_zeitfen['Date'].iloc[0])
-#    dt_end = pd.Timestamp(df_zeitfen['Date'].iloc[-1])
-#    target_ax.set_xlim(dt_start, dt_end)  
-#    if target_ax_name != '3Win':  # Keine Preis-Skala im FFT-Log
-#        target_ax.set_ylim(df_zeitfen['Price'].min() * 0.95, df_zeitfen['Price'].max() * 1.05)
-#    if target_ax_name == '4Win':
-#        dt_mitte = dt_start + (dt_end - dt_start) / 2
-#        target_ax.xaxis.set_major_locator(mticker.FixedLocator([mdates.date2num(dt_start), mdates.date2num(dt_mitte),
-#                                                                mdates.date2num(dt_end)]))
-#        def spar_formatierer(x, pos):
-#            def abst(x, y): return abs(x - mdates.date2num(y))
-#            if (abst(x, dt_mitte) < 1.0) or (abst(x, dt_start) < 1.0) or (abst(x, dt_end) < 1.0):
-#                return pd.to_datetime(mdates.num2date(x)).strftime('%Y-%m-%d')
-#            return ''
-#        target_ax.xaxis.set_major_formatter(mticker.FuncFormatter(spar_formatierer))
-#        target_ax.xaxis.set_minor_locator(mticker.NullLocator())
-#        target_ax.grid(True, which='major', linestyle='--', alpha=0.3)
-#    else:
-#        tage_fenster = (dt_end - dt_start).days
-#        target_ax.xaxis.set_major_locator(mdates.YearLocator())
-#        target_ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-#        if tage_fenster < 730:
-#            target_ax.xaxis.set_minor_locator(mdates.MonthLocator())
-#            target_ax.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
-#            target_ax.grid(True, which='both', linestyle='--', alpha=0.5)
-#        else:
-#            target_ax.xaxis.set_minor_locator(mdates.MonthLocator())
-#            target_ax.xaxis.set_minor_formatter(mticker.NullFormatter())
-#            target_ax.grid(True, which='major', linestyle='--')
-#    plt.setp(target_ax.get_xticklabels(), rotation=0, ha='center')
 def zeitfenst(df_input):
     if df_input.empty:
         return df_input, 0, 0, pd.Timestamp.now(), pd.Timestamp.now(), "", ""
