@@ -16,6 +16,7 @@
 | **BOszi_Projekt_prerequisites.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/PY/BOszi_Projekt_prerequisites.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/PY/BOszi_Projekt_prerequisites.py) | Python-Code Prerequisites |
 | **Oszi_03n_290626.ipynb** | `iPYNB` | [💀](https://github.com/xylokopa/Fy-Nance/blob/main/IPYNB/Oszi_03n_01-07-26.ipynb) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/IPYNB/Oszi_03n_01-07-26.ipynb) | jupyter Notebook Hauptprogramm |
 | **BOszi_Projekt.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/PY/BOszi_Projekt.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/PY/BOszi_Projekt.py) | Hauptprogramm Python-Code |
+| **fy_nance_app.streamlit.app.py** | `PY` | [🧪](https://github.com/xylokopa/Fy-Nance/blob/main/stramlit_app/app.py) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/streamlit_app/app.py) | Streamlit-App ONLINE |
 | **BILD-AUSSCHNITT** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/PNG/figur0-1.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/PNG/figur0-1.png?raw=true) | Screencopy wenn alles OK |
 | **PROJEKT-OBERFLAECHE** | `PNG` | [📺](https://github.com/xylokopa/Fy-Nance/blob/main/PNG/250402-260618.png) | [📥](https://github.com/xylokopa/Fy-Nance/blob/main/PNG/250402-260618.png?raw=true) | Screencopy wenn alles OK |
 | **WORTSCHATZ** | `PDF` | [👁️](https://xylokopa.github.io/Fy-Nance/PDF/WORTSCHATZ.pdf) | Geöffnete PDF direkt herunterladen | PCA-Ressources PDF |
