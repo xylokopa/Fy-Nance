@@ -430,10 +430,11 @@ def generiere_mosaik(df_input, akt_ticker, config):
                             f"# Ergebnis Bootstrap-Simulation(1000 Durchläufe) #\n"
                             f"{decision_text}")
                         # Text knapp in Kachel setzen (Klammern & Einrückung korrigiert!)
-                        ax3.text(0.05, 0.93, info_text, transform=ax3.transAxes,
+                        for spine in ax3.spines.values():spine.set_visible(False)
+                        ax3.text(0.05, 0.98, info_text, transform=ax3.transAxes,
                                  fontsize=10, fontfamily='monospace', fontweight='bold', va='top', ha='left',
-                                 bbox=dict(boxstyle='round,pad=0.6', facecolor='wheat', alpha=0.25))             
-                        ax3.set_title("Kachel 3: SCHAUFELBAGGER-DISTANZ (W1)", fontsize=10, fontweight='bold', color='darkred')
+                                 bbox=dict(edgecolor='none',boxstyle='round,pad=0.6', alpha=0.25))             
+                        ax3.set_title("Kachel 3: SCHAUFELBAGGER-DISTANZ (W1)", fontsize=10, pad=15, fontweight='bold', color='darkred')
                     else:
                         ax3.text(0.5, 0.5, "N unzureichend", ha='center', va='center', fontsize=8)
                 except Exception as e:
