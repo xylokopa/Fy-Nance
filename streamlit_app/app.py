@@ -15,6 +15,11 @@ from datetime import datetime, date
 import os
 import locale
 import streamlit as st
+st.markdown("""<style>[data-testid="stSidebar"] {min-width:200px;max-width:200px;}
+            [data-testid="stMainBlockContainer"] {
+             padding-left: 1rem !important;padding-right: 1rem !important;
+             padding-top: 3rem !important;max-width: 100% !important;}</style>""",
+             unsafe_allow_html=True)
 # Seite für breites Web-Layout 
 st.set_page_config(layout="wide", page_title="Börsen-Oszillograph")
 osz = 'Oszi_03n'
@@ -300,7 +305,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
               ['1Win', '1Win', '1Win', '1Win', '5Win', '5Win'],
               ['1Win', '1Win', '1Win', '1Win', '5Win', '5Win'],
               ['1Win', '1Win', '1Win', '1Win', '5Win', '5Win']]
-    fig, axd = plt.subplot_mosaic(layout, figsize=(15, 10.75),
+    fig, axd = plt.subplot_mosaic(layout, figsize=(15, 10.0),
                gridspec_kw={'width_ratios': [1.0, 1.0, 1.0, 1.0, 1.0, 1.5],
                            'height_ratios': [1.25, 1.0, 1.0, 1.0]}, layout='constrained')
     ax = axd['1Win']
