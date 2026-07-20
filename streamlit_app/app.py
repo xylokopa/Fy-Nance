@@ -96,11 +96,19 @@ ausgewaehlter_ticker_str = st.sidebar.selectbox(
 akt_index = ticker_options.index(ausgewaehlter_ticker_str)
 akt_ticker = ticker_df.iloc[akt_index]
 # Online / Offline Betriebsmodus
+st.sidebar.subheader("update 20jul2026")
 val_online = st.sidebar.radio("Betriebsmodus", ["Offline (Lokale CSV)", "Online (Yahoo Live)"],
                               label_visibility="collapsed")
 # Kalendarische Zeitfenster
-start_date = st.sidebar.date_input("Anfang (ANF_DAT)", date(2015, 1, 2))
-end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026, 7, 5))
+start_date = st.sidebar.date_input("Anfang (ANF_DAT)", date(2019,10,10))
+end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026, 7, 4))
+# SPERRE & VALIDIERUNG HINZUFÜGEN:
+if start_date > date(2026, 7, 4):
+    st.error("Fehler: Das Startdatum darf für die historische Analyse maximal der 04.07.2026 sein.")
+    st.stop() # Stoppt die Streamlit-Ausführung elegant ohne hässlichen Traceback
+if start_date >= end_date:
+    st.error("Fehler: Das Anfangsdatum muss vor dem Enddatum liegen.")
+    st.stop()
 # Dynamische Diagnose-Schalter
 moving_size = st.sidebar.slider("Moving-Average Fenster", min_value=5, max_value=150, value=20)
 preis_linie = st.sidebar.checkbox("Preis-Linie ein", value=True)
@@ -136,7 +144,7 @@ st.sidebar.subheader("Navigation History")
 col1, col2 = st.sidebar.columns(2)
 with col1:
     ist_zurueck_disabled = len(st.session_state.hist_bak) == 0
-    if st.button("<< Zurück <<", disabled=ist_zurueck_disabled):
+    if st.button("Back", disabled=ist_zurueck_disabled):
         # Letzten Zustand aus dem Rückwärts-Speicher holen
         ziel_idx, ziel_start, ziel_end = st.session_state.hist_bak.pop()        
         # Aktuellen Zustand in den Vorwärts-Speicher schieben (für den >> Vor >> Button)
@@ -148,7 +156,7 @@ with col1:
         st.rerun()
 with col2:
     ist_vor_disabled = len(st.session_state.hist_vor) == 0
-    if st.button(">> Vor >>", disabled=ist_vor_disabled):
+    if st.button("Forwd", disabled=ist_vor_disabled):
         # Nächsten Zustand aus dem Vorwärts-Speicher holen
         ziel_idx, ziel_start, ziel_end = st.session_state.hist_vor.pop()        
         # Aktuellen Zustand zurück in den Rückwärts-Speicher schieben
@@ -163,7 +171,15 @@ with col2:
 # ==============================================================================
 def lade_ticker_daten(num, nam, tik, modus, start, ende):
     if modus == "Online (Yahoo Live)":
+        # 1. Daten live von Yahoo abrufen
         df = yf.download(tik, start=start, end=ende)
+        # 2. Multi-Index flach machen falls vorhanden
+        if isinstance(df.columns, pd.MultiIndex):
+        # Löscht Ticker-Ebene 1 / behält 'Price'/'Close' (Ebene 0)
+           df.columns = df.columns.get_level_values(0)
+        # 3. Spaltennamen auf ('Price') mappen
+        # Falls 'Close' oder 'Adj Close' existieren, auch zu 'Price' umbenennen
+        df = df.rename(columns={'Close': 'Price','Adj Close': 'Price'})   
     else:
         num_formatted = f"{int(num):02d}"
         dateiname = f"{num_formatted}{nam}_Offline.csv"
