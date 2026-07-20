@@ -1,4 +1,4 @@
-# fy-nance-app.streamlit.app.py 16-07-2026 514-Zeilen new-app_10Bootstrap_6.bak
+# fy-nance-app.streamlit.app.py update 20jul2026 535-Zeilen new-app_11Bootstrap_1.bak
 # ==============================================================================
 # TEIL 1: IMPORTE & PROJEKT-INITIALISIERUNG
 # ==============================================================================
@@ -33,7 +33,7 @@ except Exception:
         locale.setlocale(locale.LC_TIME, "de_DE")
     except Exception:
         pass  # Fallback, falls System-Locale fehlt
-# Ticker-Liste laden (Automatisches Fallback, falls Datei fehlt)
+# Ticker-Liste laden (Autom. Fallback, falls Datei fehlt)
 if not os.path.exists('Ticker-Liste_alt.csv'):
     ticker_liste = """Num,Nam,Tik
 00,Allianz,ALV.DE
@@ -97,17 +97,17 @@ akt_index = ticker_options.index(ausgewaehlter_ticker_str)
 akt_ticker = ticker_df.iloc[akt_index]
 # Online / Offline Betriebsmodus
 st.sidebar.subheader("update 20jul2026")
-val_online = st.sidebar.radio("Betriebsmodus", ["Offline (Lokale CSV)", "Online (Yahoo Live)"],
+val_online = st.sidebar.radio("Modus", ["Offline (Lokal CSV)", "Online (Live Yahoo)"],
                               label_visibility="collapsed")
 # Kalendarische Zeitfenster
 start_date = st.sidebar.date_input("Anfang (ANF_DAT)", date(2019,10,10))
 end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026, 7, 4))
-# SPERRE & VALIDIERUNG HINZUFÜGEN:
+# SPERRE & VALIDIERUNG:
 if start_date > date(2026, 7, 4):
-    st.error("Fehler: Das Startdatum darf für die historische Analyse maximal der 04.07.2026 sein.")
-    st.stop() # Stoppt die Streamlit-Ausführung elegant ohne hässlichen Traceback
+    st.error("Fehler: Startdatum für die historische Analyse maximal 04.07.2026")
+    st.stop() # Stoppt Streamlit-run ohne Traceback
 if start_date >= end_date:
-    st.error("Fehler: Das Anfangsdatum muss vor dem Enddatum liegen.")
+    st.error("Fehler: Anfangsdatum muss vor dem Enddatum liegen.")
     st.stop()
 # Dynamische Diagnose-Schalter
 moving_size = st.sidebar.slider("Moving-Average Fenster", min_value=5, max_value=150, value=20)
@@ -118,22 +118,22 @@ FEmiw_linie = True # Reiner Schalter ohne Callback (Verhindert Widget-Verschwind
 FFT_Diagram = st.sidebar.checkbox("Fourier oder Wasserstein-Test", value=False)
 # Wasserstein = st.sidebar.checkbox("Wasserstein-Test(W1)", value=False)
 Wasserstein = True # Reiner Schalter ohne Callback 
-Freez_linie = st.sidebar.checkbox("Freeze Linie in ax4", value=False)
+Freez_linie = st.sidebar.checkbox("Freeze Linie in Kachel4", value=False)
 # ==============================================================================
-# TEIL 3: HISTORY-LOGBUCH (NAVIGATION MIT ABSOLUTER LOCK-STEUERUNG)
+# TEIL 3: HISTORY-LOGBUCH (NAVIGATION MIT LOCK-STEUERUNG)
 # ==============================================================================
-# Den Sprung-Flag initialisieren, falls er beim ersten Start fehlt
+# Sprung-Flag initialisieren, falls beim ersten Start fehlt
 if 'history_sprung' not in st.session_state:
     st.session_state.history_sprung = False
 if 'letzter_ticker' not in st.session_state:
     st.session_state.letzter_ticker = akt_index
-# ERKENNUNG DER TICKER-HERKUNFT (gesperrt gegen Überschreiben!)
+# ERKENNUNG TICKER-HERKUNFT (Überschreiben gesperrt)
 if st.session_state.letzter_ticker != akt_index:
     if st.session_state.history_sprung:
-        # logge nichts in 'hist_bak' und lösche NICHT 'hist_vor'!
+        # no log in 'hist_bak' and  do not delete 'hist_vor'!
         st.session_state.history_sprung = False  # Schalter für nächsten Klick zurück
     else:
-        # Manueller Klick im Dropdown -> Rückwärts-History speichern, Vorwärts löschen
+        # Klick manuell im Dropdown -> Back-History speichern, Forward löschen
         st.session_state.hist_bak.append((st.session_state.letzter_ticker, start_date, end_date))
         st.session_state.hist_vor.clear()    
     # Aktualisiere Vergleicher auf aktuellen Stand
@@ -192,9 +192,9 @@ def lade_ticker_daten(num, nam, tik, modus, start, ende):
 # Feste Zeitgrenzen für den Vergleichsgraphen
 VERGLEICH_START = "2015-01-01"
 VERGLEICH_ENDE = "2026-07-14"
-# Die Freeze-Ablaufsteuerung für ax4 im sequentiellen Code
+# Freeze-Ablaufsteuerung für Kachel 4 im sequentiellen Code
 if not Freez_linie:
-    # Schalter ist AUS -> Daten folgen kontinuierlich dem aktuellen Ticker
+    # Schalter AUS -> Daten folgen kontinuierlich aktuellem Ticker
     st.session_state.freeze_aktiviert = False
     try:
         df_vergleich = lade_ticker_daten(
@@ -207,11 +207,11 @@ if not Freez_linie:
         st.session_state.vergleichs_daten = df_vergleich
         st.session_state.vergleichs_ticker_name = akt_ticker['Nam']
     except Exception as e:
-        st.sidebar.error(f"Fehler beim Aktualisieren der Hintergrunddaten: {e}")
+        st.sidebar.error(f"Fehler bei Aktualisierung Hintergrunddaten: {e}")
 else:
-    # Schalter ist AN -> Zustand einfrieren
+    # Schalter AN -> Zustand in Kachel 4 einfrieren
     if not st.session_state.freeze_aktiviert:
-        # Wird exakt einmal ausgeführt, wenn das Häkchen gesetzt wird.
+        # Wird einmal ausgeführt, wenn Häkchen gesetzt 
         st.session_state.freeze_aktiviert = True
 # HAUPTDATENSATZ LADEN (Für die Kacheln ax1, ax2, ax3)
 try:
@@ -342,7 +342,7 @@ def generiere_mosaik(df_input, akt_ticker, config):
     ax.legend(loc='upper left', fontsize=8)
     axen_skalierung(ax, df_zeitfenst, '1Win')
 # ==============================================================================
-# TEIL 8: STATISTISCHES POSTPROCESSING, FFT & MAIN RUNNER TRIGGER
+# TEIL 8: STATISTISCHES POSTPROCESSING, FFT/WASSERSTEIN & MAIN RUNNER TRIGGER
 # ==============================================================================
     diff_data = df_zeitfenst['Diff'].dropna().values
     if len(diff_data) > 5:
