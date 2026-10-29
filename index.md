@@ -21,7 +21,7 @@ Daten wie z.B APPLE (`AAPL`).
 Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
 
 <iframe 
-  src="https://streamlit.app" 
+  src="https://fy-nance-app.streamlit.app" 
   width="100%" 
   height="600px" 
   style="border: 1px solid #ccc; border-radius: 8px;">
