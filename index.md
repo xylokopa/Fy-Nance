@@ -15,6 +15,18 @@ Daten wie z.B APPLE (`AAPL`).
 * **[Hauptprogramm Börsen-Oszillograph](PY/BOszi_Projekt.py):** Der zentrale Python-Code zur Berechnung der Modelle.
 * **[Interaktives Jupyter Notebook](IPYNB/Oszi_03n_290626.ipynb):** Die mathematische Herleitung und Schritt-für-Schritt-Analyse.
 * **[Streamlit Web-App](streamlit_app/app.py):** Der Code für die interaktive Benutzeroberfläche.
+* **[Streamlit Web-App](fy_nance_app.streamlit.app.py):** Der Code für die interaktive Benutzeroberfläche.
+
+### 🎮 Interaktive Live-App (Direkt ausprobieren)
+Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
+
+<iframe 
+  src="https://streamlit.app" 
+  width="100%" 
+  height="600px" 
+  style="border: 1px solid #ccc; border-radius: 8px;">
+</iframe>
+
 
 ### Dokumentation & Analysen
 * 📄 [Vollständige Python-Script-Dokumentation (PDF)](PDF/BOszi_03.pdf)
