@@ -14,7 +14,7 @@ Daten wie z.B APPLE (`AAPL`).
 ### Kernkomponenten & Programme
 * **[Hauptprogramm Börsen-Oszillograph](PY/BOszi_Projekt.py):** Der zentrale Python-Code zur Berechnung der Modelle.
 * **[Interaktives Jupyter Notebook](IPYNB/Oszi_03n_290626.ipynb):** Die mathematische Herleitung und Schritt-für-Schritt-Analyse.
-* **[Streamlit Web-App](streamlit_app/fy_nance_app.streamlit.app.py):** Der Code für die interaktive Benutzeroberfläche.
+* **[Streamlit Web-App](streamlit_app/app.py):** Der Code für die interaktive Benutzeroberfläche.
 
 ### Dokumentation & Analysen
 * 📄 [Vollständige Python-Script-Dokumentation (PDF)](PDF/BOszi_03.pdf)
