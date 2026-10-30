@@ -23,20 +23,15 @@ Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seit
 ### Visueller Eindruck
 Hier ein Auszug der berechneten Statistiken aus dem Projekt:
 ![Statistische Auswertung](PNG/STATISTICS.PNG)
----
+----------------------------------------------------------------------------------------------
 * Ab hier entsteht entlang WS26 ein neues Projekt...*
----
-
-### 🎮 Interaktiver Flugdaten-Auswertungstest zum Üben für das neue Projekt WS26 (Direkt ausprobieren)
-Hier kannst du die Flugdaten in den Diagrammen mit der Maus abtasten. Ändere die Karten-Wahl auf der linken Seite, falls die Kartenwahl blockiert ist.
-
-<iframe src="Auswertung.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
-
+----------------------------------------------------------------------------------------------
 ## 🚏 Die Albatros-Flight-Map
 
 "Flugplan"-skizze und als realistisch eingeschätzte Projektphasen
 
 * **Zeitraum:** Nov/Dez 2026
+
 ### Phase 1: Flugdaten ausbauen
 * **Status:** Vorbereitet (GPX-Rohdaten bevorzugt aus St-Auban/Hangwindsegeln Authon/Auribeau aus den Jahren 2012 und 2015).
 * **Nächster Schritt:** XML-Struktur in eine schlanke, html-unempfindliche Tabelle mit Zeilenzähler.
@@ -60,6 +55,11 @@ Hier kannst du die Flugdaten in den Diagrammen mit der Maus abtasten. Ändere di
 * **Ziel:** Einsatz von Python,um bei vorgegebener xy-Flugspur mit im einfachsten Modell zumindest konstanter Gleitzahl von Ort zu Ort 
             die geschätzte nächste Flugposition mit der tatsächlich beobachteten zu vergleichen und abzugleichen.Modellverfeinerung mit
             übergang zu einer variablen Gleitzahl anhand geeignet zu definierender variabler Parameter und deren Implementierung...
+
+### 🎮 Interaktiver Flugdaten-Auswertungstest zum Üben für das neue Projekt WS26 (Direkt ausprobieren)
+Hier kannst du die Flugdaten in den Diagrammen mit der Maus abtasten. Ändere die Karten-Wahl auf der linken Seite, falls die Kartenwahl blockiert ist.
+
+<iframe src="Auswertung.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 ---
 *Fahrplanstand: Freitag, 30. Oktober 2026, 18:45 Uhr. Wintereinbruch hin oder her...*
