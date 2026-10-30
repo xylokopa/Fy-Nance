@@ -61,7 +61,7 @@ Hier kannst du die Flugdaten des darunter angeboteten 5 Min-videos authon.mp4 in
 
 <iframe src="Auswertung.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
-<iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe>
+<center><iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe></center>
 
 ---Fahrplanstand: Freitag, 30. Oktober 2026, 18:45 Uhr. Wintereinbruch hin oder her...*
 
