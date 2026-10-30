@@ -57,10 +57,11 @@ Hier ein Auszug der berechneten Statistiken aus dem Projekt:
             übergang zu einer variablen Gleitzahl anhand geeignet zu definierender variabler Parameter und deren Implementierung...
 
 ### 🎮 Interaktiver Flugdaten-Auswertungstest zum Üben für das neue Projekt WS26 (Direkt ausprobieren)
-Hier kannst du die Flugdaten in den Diagrammen mit der Maus abtasten. Ändere die Karten-Wahl auf der linken Seite, falls die Kartenwahl blockiert ist.
+Hier kannst du die Flugdaten des darunter angeboteten 5 Min-videos authon.mp4 in den Diagrammen mit der Maus abtasten. 
 
 <iframe src="Auswertung.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
----
-*Fahrplanstand: Freitag, 30. Oktober 2026, 18:45 Uhr. Wintereinbruch hin oder her...*
+<iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe>
+
+---Fahrplanstand: Freitag, 30. Oktober 2026, 18:45 Uhr. Wintereinbruch hin oder her...*
 
