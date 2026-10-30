@@ -1,3 +1,4 @@
+
 # 📈 Xylokopa's Github 
 
 Willkommen auf Xylokopa's digitaler Litfaßsäule. Hier werden UNI-Projekte
@@ -20,12 +21,9 @@ Daten wie z.B APPLE (`AAPL`).
 ### 🎮 Interaktive Live-App (Direkt ausprobieren)
 Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
 
-<iframe 
-  src="https://fy-nance-app.streamlit.app" 
-  width="100%" 
-  height="600px" 
-  style="border: 1px solid #ccc; border-radius: 8px;">
-</iframe>
+<iframe src="https://fy-nance-app.streamlit.app?embed=true" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 8px;"></iframe>
+
+### 📄 Dokumentation & Analysen
 
 
 ### Dokumentation & Analysen
