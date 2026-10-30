@@ -14,12 +14,12 @@ Kurs-Diagramme mit Daten-Tests am Beispiel von Tickern wie z.B APPLE (`AAPL`).
 ### 🎮 Interaktive Live-App (Direkt ausprobieren)
 Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
 
-<iframe src="https://fy-nance-app.streamlit.app?embed=true" width="100%" height="80%" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+<iframe src="https://fy-nance-app.streamlit.app?embed=true" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 ### 🎮 Interaktiver Flugdaten-Auswertungstest zum Üben für das neue Projekt WS26 (Direkt ausprobieren)
 Hier kannst du die Flugdaten in den Diagrammen mit der Maus abtasten. Ändere die Karten-Wahl auf der linken Seite, falls die Kartenwahl blockiert ist.
 
-<iframe src="Auswertung.html" width="100%" height="80%" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+<iframe src="Auswertung.html" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 ### Dokumentation & Analysen
 * 📄 [Vollständige Python-Script-Dokumentation (PDF)](PDF/BOszi_03.pdf)
@@ -52,8 +52,8 @@ Hier ein Auszug der berechneten Statistiken aus dem Projekt:
 * **Paradigma:** "Melken" eines Hangwindes bzw. einer Wellenkamm-Linie unter 45°.
 * **Mathematischer Ansatz:** Lineare Approximation (evtl. auch 2.ten Grades) des Gelände-Netzes ( à la Cavalieri geschichtet  ). 
 * **Steuergrössen:** Bewegung in x- bzw. y-Richtung entspr. in der Realität entstandener Flugdaten 
-* **Zustandsänderung:** Resultierendes Steigen in z-Richtung vor der Felswand (über der Wasseroberfläche) bei gedämpftem Aufwind 
-                        der sich bei Annäherung ans Geländenetz annulliert 
+* **Zustandsänderung:** Resultierendes Steigen in z-Richtung vor der Felswand (bzw. über der Wasseroberfläche) bei abstandsabhängig
+                        gedämpftem Aufwind der sich bei Annäherung ans Geländenetz annulliert 
                      
 ### Phase 4: Gespeicherte reale Flugbahnen mit rechnerisch modellierten einander gegenüber stellen
 * **Zeitraum:** Jan/Feb 2027.
