@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="de"> 
+	<head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8"> 
+		<script src="https://xylokopa.hier-im-netz.de/OpenStreet/js/gpxmap_main.js"></script>
+    <script>
+			var Shtrtabs = true;
+    </script>
+		<style>
+			body { width:calc(100% - 50px);padding: 10px 10px 10px 30px }
+			figure { margin:0;padding:0; }
+			#gpxviewer { display: grid; gap: .3em; grid-template-columns: repeat(auto-fit, minmax(15em, 1fr	)); }
+			#map1 { height:100vh; }
+			#map1_profiles { height:100vh; }
+			#map1_hp  { height:calc((100% + 64px)/3);margin-top: 20px }
+			#map1_hpt { height:calc((100% + 64px)/3);margin-top:-14px }
+			#map1_vpt { height:calc((100% + 64px)/3);margin-top:-37px }
+		</style>
+	</head>
+	<body>
+		<div id="gpxviewer">
+            <figure id="map1" class="gpxview:Flugdaten.gpx:gelaende"></figure>
+			<figure id="map1_profiles">
+				<figure id="map1_hp" ></figure>
+				<figure id="map1_hpt" class="no_x"></figure>
+				<figure id="map1_vpt"></figure>
+			</figure>
+		</div>
+	</body>
+</html>
+
