@@ -5,7 +5,9 @@ Revue passiert, anstatt auf meiner Festplatte zu verstauben.
 ## 🚀 Projekt 1: Fy-Nance (Juli 2026)
 Dieses Projekt entstand als Kurs-Projekt im Sommersemester 2026. Es kombiniert 
 Kurs-Diagramme mit Daten-Tests am Beispiel von Tickern wie z.B APPLE (`AAPL`).
-
+<div align="center">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/PNG/figur0-3.PNG?raw=true" alt="Titelbild" width="100%">
+</div>
 ### Kernkomponenten & Programme
 * **[Hauptprogramm Börsen-Oszillograph](PY/BOszi_Projekt.py):** Python-Code zur Analyses von Live-Tickern.
 * **[Interaktives Jupyter Notebook](IPYNB/Oszi_03n_290626.ipynb):** Einbettung als Notebook.
