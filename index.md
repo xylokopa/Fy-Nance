@@ -61,11 +61,11 @@ Hier kannst du die Flugdaten die darunter angeboteten videos in den Diagrammen m
 
 <iframe src="Auswertung01.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
-<center><iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe></center>
+<center><iframe width="960" height="720" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe></center>
 
 <iframe src="Auswertung02.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
-<center><iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
+<center><iframe width="960" height="720" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
 
 ---Status: So 08-Nov-2026...*
 
