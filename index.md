@@ -24,7 +24,9 @@ Online live zu bedienen. Nutze die Regler auf der linken Seite, um Zeiträume un
 Auszug der berechneten Statistiken aus dem Projekt:
 ![Statistische Auswertung](PNG/STATISTICS.PNG)
 ----------------------------------------------------------------------------------------------
-* Ab hier entsteht entlang WS26 ein neues Projekt...*
+* Ab hier Stand der Dinge WS26 ...*
+### Numerik 
+* 📄 [Keplersche Fassregel und Runge-Kutta (PDF)](Kepler-Runge-Kutta.pdf)
 ----------------------------------------------------------------------------------------------
 ## 🚏 Die Albatros-Flight-Map
 
