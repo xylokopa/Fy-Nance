@@ -7,34 +7,34 @@ Dieses Projekt entstand als Kurs-Projekt im Sommersemester 2026. Es kombiniert
 Kurs-Diagramme mit Daten-Tests am Beispiel von Tickern wie z.B APPLE (`AAPL`).
 
 ### Kernkomponenten & Programme
-* **[Hauptprogramm Börsen-Oszillograph](PY/BOszi_Projekt.py):** Der zentrale Python-Code zur Berechnung der Modelle.
-* **[Interaktives Jupyter Notebook](IPYNB/Oszi_03n_290626.ipynb):** Die mathematische Herleitung und Schritt-für-Schritt-Analyse.
-* **[Streamlit Web-App](fy_nance_app.streamlit.app.py):** Der Code für die interaktive Benutzeroberfläche.
+* **[Hauptprogramm Börsen-Oszillograph](PY/BOszi_Projekt.py):** Python-Code zur Analyses von Live-Tickern.
+* **[Interaktives Jupyter Notebook](IPYNB/Oszi_03n_290626.ipynb):** Einbettung als Notebook.
+* **[Streamlit Web-App](fy_nance_app.streamlit.app.py):** Code der interaktiven Live-App.
 
 ### 🎮 Interaktive Live-App (Direkt ausprobieren)
-Hier kannst du das Dashboard live bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
+Online live zu bedienen. Nutze die Regler auf der linken Seite, um Zeiträume und das Moving-Average-Fenster anzupassen:
 
 <iframe src="https://fy-nance-app.streamlit.app?embed=true" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 ### Dokumentation & Analysen
-* 📄 [Vollständige Python-Script-Dokumentation (PDF)](PDF/BOszi_03.pdf)
+* 📄 [Python-Script-Dokumentation (PDF)](PDF/BOszi_03.pdf)
 * 📊 [PCA-Ressourcen & Theorie zur Hauptkomponentenanalyse (PDF)](PDF/PCA-Data-ressources.pdf)
 
 ### Visueller Eindruck
-Hier ein Auszug der berechneten Statistiken aus dem Projekt:
+Auszug der berechneten Statistiken aus dem Projekt:
 ![Statistische Auswertung](PNG/STATISTICS.PNG)
 ----------------------------------------------------------------------------------------------
 * Ab hier entsteht entlang WS26 ein neues Projekt...*
 ----------------------------------------------------------------------------------------------
 ## 🚏 Die Albatros-Flight-Map
 
-"Flugplan"-skizze und als realistisch eingeschätzte Projektphasen
+"Flugplan"-skizze und geschätzte Projektphasen
 
 * **Zeitraum:** Nov/Dez 2026
 
 ### Phase 1: Flugdaten ausbauen
-* **Status:** Vorbereitet (GPX-Rohdaten bevorzugt aus St-Auban/Hangwindsegeln Authon/Auribeau aus den Jahren 2012 und 2015).
-* **Nächster Schritt:** XML-Struktur in eine schlanke, html-unempfindliche Tabelle mit Zeilenzähler.
+* **Status:** Vorbereitet (GPX-Rohdaten aus St-Auban/Hangwindsegeln Authon/Auribeau aus den Jahren 2012 und 2015).
+* **Nächster Schritt:** XML-Struktur als Flugdaten-Tabelle mit Zeilenzähler.
 * **Übergabeparameter:** `[Zeilennummer] -> [lon_x, lat_y, ele_z, time_t]`.
 
 ### Phase 2: Gelände einbeziehen
@@ -56,12 +56,16 @@ Hier ein Auszug der berechneten Statistiken aus dem Projekt:
             die geschätzte nächste Flugposition mit der tatsächlich beobachteten zu vergleichen und abzugleichen.Modellverfeinerung mit
             übergang zu einer variablen Gleitzahl anhand geeignet zu definierender variabler Parameter und deren Implementierung...
 
-### 🎮 Interaktiver Flugdaten-Auswertungstest zum Üben für das neue Projekt WS26 (Direkt ausprobieren)
-Hier kannst du die Flugdaten des darunter angeboteten 5 Min-videos authon.mp4 in den Diagrammen mit der Maus abtasten. 
+### 🎮 Interaktiver Flugdaten-Auswertungstests zum Üben 
+Hier kannst du die Flugdaten die darunter angeboteten videos in den Diagrammen mit der Maus abtasten. 
 
-<iframe src="Auswertung.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+<iframe src="Auswertung01.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 <center><iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe></center>
 
----Fahrplanstand: Freitag, 30. Oktober 2026, 18:45 Uhr. Wintereinbruch hin oder her...*
+<iframe src="Auswertung02.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+
+<center><iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
+
+---Status: So 08-Nov-2026...*
 
