@@ -27,6 +27,9 @@ Auszug der berechneten Statistiken aus dem Projekt:
 ![Statistische Auswertung](PNG/STATISTICS.PNG)
 ----------------------------------------------------------------------------------------------
 * Ab hier Stand der Dinge WS26 ...*
+<div align="center">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Kepler-Runge-Kutta.PNG?raw=true" alt="Titelbild" width="100%">
+</div>
 ### Numerik 
 * 📄 [Keplersche Fassregel und Runge-Kutta (PDF)](Kepler-Runge-Kutta.pdf)
 ----------------------------------------------------------------------------------------------
