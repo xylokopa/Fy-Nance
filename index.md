@@ -25,16 +25,18 @@ Online live zu bedienen. Nutze die Regler auf der linken Seite, um Zeiträume un
 ### Visueller Eindruck
 Auszug der berechneten Statistiken aus dem Projekt:
 ![Statistische Auswertung](PNG/STATISTICS.PNG)
+
 ----------------------------------------------------------------------------------------------
-* Ab hier Stand der Dinge WS26 ...*
+* Ab hier Ideen-Schnipsel zum WS26 ...*
 <div align="center">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Kepler-Runge-Kutta.PNG?raw=true" alt="Titelbild" width="100%">
 </div>
 ### Numerik 
 * 📄 [Keplersche Fassregel und Runge-Kutta (PDF)](Kepler-Runge-Kutta.pdf)
-### Python-Programme zu der PDF
+### Python-Programme zur PDF
 * **[Kepler-Runge-Kutta Demo mit Grafik](Dolia_RK4_01.py):** Python-Code von der Fass-Regel zu RK4
 * **[Kepler-Runge-Kutta RK4-Fehler-Test](Dolia_RK4_02.py):** Python-Code Einfluss der Schrittweite
+
 ----------------------------------------------------------------------------------------------
 ## 🚏 Die Albatros-Flight-Map
 
