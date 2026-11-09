@@ -64,7 +64,7 @@ Auszug der berechneten Statistiken aus dem Projekt:
             übergang zu einer variablen Gleitzahl anhand geeignet zu definierender variabler Parameter und deren Implementierung...
 
 ### 🎮 Interaktiver Flugdaten-Auswertungstests zum Üben 
-Hier kannst du die Flugdaten die darunter angeboteten videos in den Diagrammen mit der Maus abtasten. 
+Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mit der Maus abfahren. 
 
 <iframe src="Auswertung01.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
