@@ -83,5 +83,17 @@ Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mi
 
 <center><iframe width="900" height="675" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
 
+<div align="center">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Authon_02.PNG?raw=true" alt="Titelbild" width="100%">
+</div>
+
+<div align="center">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Authon_03.PNG?raw=true" alt="Titelbild" width="100%">
+</div>
+
+<div align="center">
+  <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Authon_04.PNG?raw=true" alt="Titelbild" width="100%">
+</div>
+
 ---Status: Di 17-Nov-2026...*
 
