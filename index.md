@@ -83,5 +83,5 @@ Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mi
 
 <center><iframe width="900" height="675" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
 
----Status: So 17-Nov-2026...*
+---Status: Di 17-Nov-2026...*
 
