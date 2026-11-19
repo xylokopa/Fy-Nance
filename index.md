@@ -92,10 +92,10 @@ Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mi
 </div>
 
 <div align="center">
-[← Zurück zur Hauptseite](/)
 
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Authon_04.PNG?raw=true" alt="Titelbild" width="100%">
 </div>
 
 ---Status: Di 17-Nov-2026...*
 
+[← Zurück zur Hauptseite](/)
