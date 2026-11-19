@@ -1,0 +1,51 @@
+/* gpxmap.css 20-07-25 */
+	 
+.JSinfofenster { position:absolute; z-index:1000; margin-top:10px; margin-left:10px; border:1px solid #aaa; border-radius:3px; 
+                box-shadow:1px 1px 5px #aaa; background-color:white; padding:0.5em; font-size:0.8em; line-height:1.2em; 
+								max-width:50%; color: black } 
+.JSinfofenster strong { font-size:1.2em }
+
+.JSinfofenster_gm { color: black !important }
+.JSinfofenster_gm strong { white-space:nowrap }
+.leaflet-popup-content { overflow: auto }
+
+.JSmaphead { position: absolute; margin:0;padding:0;font-size:16px;line-height:24px;z-index:510;max-width:100% }
+.JSmaphead * { margin:0;padding:0; }
+.JSmaphead div { display:inline-block; }
+.JSmaphead button { border: none; background-color: transparent; font: inherit; color: inherit; text-align: inherit; padding: 0; cursor: pointer; } 
+
+.visually-hidden { position: absolute !important; clip: rect(1px, 1px, 1px, 1px) !important; padding: 0 !important; border: 0 !important; height: 1px !important; width: 1px !important; overflow: hidden !important; white-space: nowrap !important; }
+
+.JScheckbox ol { position: absolute; }
+.JScheckbox li { list-style-type: none; white-space:nowrap; background-color: white; }
+.JScheckbox input { margin-right:3px; margin-left:3px; }
+.JScheckbox li input:hover ~ label, .JScheckbox li label:hover, .JScheckbox li button:hover,
+.JScheckbox li input:focus ~ label, .JScheckbox li button:focus { outline: 1px dotted red; background-color: lightgray; }
+.JScheckbox [aria-pressed="false"]::after { content: " ▼" }
+.JScheckbox ol[aria-expanded="false"] { display: none }
+.JScheckbox [aria-pressed="true"]::after { content: " ▲" }
+.JScheckbox ol[aria-expanded="true"] { overflow-y:auto }
+.JScheckbox ol[aria-expanded="true"] li { padding-right: 1.5em }
+
+.JSinfodiv { border:3px solid black; background-color:white; padding:30px; font-size:1.2em; line-height:3em; text-align:center;
+						position:relative; z-index:1000; left:20%; top:-80%; width:60%; height:60%} 
+.JSinfodiv img { position:absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%); }
+          
+.JSmapdiv_map { width:100%; height:100%; color: black }
+.JSmapdiv_map img { max-width: none }
+.JSmapdiv { font-size:16px; position:relative }
+.JSmapdiv img { image-orientation:from-image }
+
+.JSfull { background-color:#eee; 
+          -webkit-transition: left 1s, top 1s, height 1s, width 1s; 
+                  transition: left 1s, top 1s, height 1s, width 1s;
+          z-index: 2001}
+
+.JSprofildiv  {  }
+
+div.JScluster-icon {  }
+div.JScluster-icon > div { display: flex; align-items: center; justify-content: center; font-weight: bold }
+div.JSdirection-marker { width: auto !important; height: auto !important; }
+div.JSdirection-marker > div { display: flex; align-items: center; justify-content: center; font-size: 2em; }
+
+div.leaflet-top { z-index: 500 !important }
