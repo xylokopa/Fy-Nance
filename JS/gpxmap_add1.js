@@ -33,21 +33,20 @@ JS.Map = function(makemap) {
       });
 
       this.baseLayers["Satellit"] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
-	    maxZoom: 21,
+	    maxZoom: 18,
 	    attribution: mycp+'<a href="https://esri.com">Esri</a>',
 	    referrerPolicy: 'strict-origin'
       });
 
-      this.baseLayers["OSM"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
-	    maxZoom: 20,
-	    attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
+      this.baseLayers["OSM"] = L.tileLayer('https://openstreetmap.org{z}/{x}/{y}.png', {
+	    maxZoom: 19,
+	    attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
       });
 
       this.baseLayers["OSMDE"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
-	    maxZoom: 20,
+	    maxZoom: 19,
           attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
       });
-
 
 	this.baseLayers["TopPlusOpen"] = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.png', {
 		maxZoom: 18,
