@@ -73,7 +73,7 @@ Auszug der berechneten Statistiken aus dem Projekt:
 ### 🎮 Interaktiver Flugdaten-Auswertungstests zum Üben 
 Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mit der Maus abfahren. 
 
-<iframe src="Auswertung01.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+<iframe src="Auswertung01.html" width="100%" height="750px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 <div align="center">
   <img src="https://github.com/xylokopa/Fy-Nance/blob/main/Authon_01.PNG?raw=true" alt="Titelbild" width="100%">
@@ -81,7 +81,7 @@ Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mi
 
 <center><iframe width="900" height="675" src="https://www.youtube-nocookie.com/embed/23Xh0o5LPak" allow="autoplay"></iframe></center>
 
-<iframe src="Auswertung02.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
+<iframe src="Auswertung02.html" width="100%" height="750px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 <center><iframe width="900" height="675" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
 
