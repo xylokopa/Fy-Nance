@@ -81,17 +81,11 @@ JS.Map = function(makemap) {
 		});
 	}
 
-	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer('https://www.google.com/maps/@,,5337m/data=!3m1!1e3', { 
+	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer(JS.gpxmap.Path+"Icons/Grau256x256.png", { 
 		maxZoom: 22,
 		attribution: mycp,referrerPolicy: 'strict-origin'
 	});
 
-//      this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
-//           maxZoom: 18,
-//           attribution: mycp + '<a href="https://esri.com">Esri Satellit</a>',
-//           referrerPolicy: 'strict-origin'
-//      });
- 
 	this.overlayLayers = {}; 
 
 //	this.overlayLayers["Open Sea"] = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
