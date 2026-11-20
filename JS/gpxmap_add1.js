@@ -1,4 +1,4 @@
-// gpxmap_add1.js
+// gpxmap_add1_02.js  47.98874/7.85619
 
 "use strict";
 //Alt: https://sgx.geodatenzentrum.de/wmts_topplus_open/...Neu: https://wheregroup.com{z}/{x}/{y}.png
@@ -22,7 +22,7 @@ JS.Map = function(makemap) {
 
 	// Map anlegen
 
-      const mycp = '<a href="https://google.com" title="gm">GM</a> | ';
+      const mycp = '<a href="https://xylokopa.github.io" title="gm">IO</a> | ';
 
       this.baseLayers = {}; 
 
@@ -32,25 +32,25 @@ JS.Map = function(makemap) {
 	    referrerPolicy: 'strict-origin'
       });
 
-      this.baseLayers["Satellit"] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
-	    maxZoom: 18,
-	    attribution: mycp+'<a href="https://esri.com">Esri</a>',
-	    referrerPolicy: 'strict-origin'
-      });
-
-      this.baseLayers["Open Topo"] = L.tileLayer('https://openstreetmap.org{z}/{x}/{y}.png', {
-	    maxZoom: 19,
-	    attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
-      });
-
-      this.baseLayers["OSMDE"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
-	    maxZoom: 19,
-          attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
-      });
-
-	this.baseLayers["TopPlusOpen"] = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.png', {
-		maxZoom: 18,
-		attribution: mycp+'<a href="https://www.bkg.bund.de/SharedDocs/Produktinformationen/BKG/DE/P-2017/170922-TopPlus-Web-Open.html">BKG</a>',referrerPolicy: 'strict-origin'});
+//      this.baseLayers["Satellit"] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
+//	    maxZoom: 18,
+//	    attribution: mycp+'<a href="https://esri.com">Esri</a>',
+//	    referrerPolicy: 'strict-origin'
+//      });
+//
+//      this.baseLayers["Open Topo"] = L.tileLayer('https://openstreetmap.org{z}/{x}/{y}.png', {
+//	    maxZoom: 19,
+//	    attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+//      });
+//
+//      this.baseLayers["OSMDE"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
+//	    maxZoom: 19,
+//          attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
+//      });
+//
+//	this.baseLayers["TopPlusOpen"] = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.png', {
+//		maxZoom: 18,
+//		attribution: mycp+'<a href="https://www.bkg.bund.de/SharedDocs/Produktinformationen/BKG/DE/P-2017/170922-TopPlus-Web-Open.html">BKG</a>',referrerPolicy: 'strict-origin'});
 	
 // https://tileserver.4umaps.com/${z}/${x}/${y}.png
 // zoomlevel 16
