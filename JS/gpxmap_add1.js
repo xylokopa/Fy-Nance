@@ -32,7 +32,7 @@ JS.Map = function(makemap) {
 	    referrerPolicy: 'strict-origin'
       });
 
-      this.baseLayers["OSM"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      this.baseLayers["OPT"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	    maxZoom: 17,
 	    attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
 	    referrerPolicy: 'strict-origin'
