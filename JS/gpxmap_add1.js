@@ -1,4 +1,4 @@
-// gpxmap_add1_03.js  47.98874/7.85619
+// gpxmap_add1_03.js  47.98874/7.85619 https://www.google.com/maps/@,,5337m/data=!3m1!1e3
 
 "use strict";
 //Alt: https://sgx.geodatenzentrum.de/wmts_topplus_open/...Neu: https://wheregroup.com{z}/{x}/{y}.png
@@ -78,7 +78,7 @@ JS.Map = function(makemap) {
 
 	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer(JS.gpxmap.Path+"Icons/Grau256x256.png", { 
 		maxZoom: 22,
-                attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
+                attribution: mycp+'<a href="https://www.google.com/maps/@,,5337m/data=!3m1!1e3">GoogleMP</a>',
 	        referrerPolicy: 'strict-origin'
 	});
 
