@@ -78,7 +78,7 @@ JS.Map = function(makemap) {
 
 	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer(JS.gpxmap.Path+"Icons/Grau256x256.png", { 
 		maxZoom: 22,
-                attribution: mycp+'<a href="https://www.google.com/maps/@,,5337m/data=!3m1!1e3">GoogleMP</a>',
+                attribution: mycp+'<a href="https://www.google.com/maps/@44.19,6.01,13z/data=!3m1!1e3" target="_blank" rel="noopener">GoogleMP</a>',
 	        referrerPolicy: 'strict-origin'
 	});
 
