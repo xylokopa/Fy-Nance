@@ -96,14 +96,14 @@ ausgewaehlter_ticker_str = st.sidebar.selectbox(
 akt_index = ticker_options.index(ausgewaehlter_ticker_str)
 akt_ticker = ticker_df.iloc[akt_index]
 # Online / Offline Betriebsmodus
-st.sidebar.subheader("update 20jul2026")
+st.sidebar.subheader("update 20nov2026")
 val_online = st.sidebar.radio("Modus", ["Offline (Lokal CSV)", "Online (Live Yahoo)"],
                               label_visibility="collapsed")
 # Kalendarische Zeitfenster
 start_date = st.sidebar.date_input("Anfang (ANF_DAT)", date(2019,10,10))
-end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026, 7, 4))
+end_date = st.sidebar.date_input("Ende (END_DAT)", date(2026,11,20))
 # SPERRE & VALIDIERUNG:
-if start_date > date(2026, 7, 4):
+if start_date > date(2026,11,20):
     st.error("Fehler: Startdatum für die historische Analyse maximal 04.07.2026")
     st.stop() # Stoppt Streamlit-run ohne Traceback
 if start_date >= end_date:
