@@ -88,9 +88,9 @@ JS.Map = function(makemap) {
 
 	this.overlayLayers = {}; 
 
-	this.overlayLayers["Open Sea"] = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
-		attribution: '<a href="https://www.openseamap.org">OpenSeaMap</a>',referrerPolicy: 'strict-origin'
-	});
+//	this.overlayLayers["Open Sea"] = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+//		attribution: '<a href="https://www.openseamap.org">OpenSeaMap</a>',referrerPolicy: 'strict-origin'
+//	});
 
 	this.overlayLayers["Hiking"] = L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png', {
 		attribution: '<a href="https://waymarkedtrails.org">Hiking</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC</a>)',referrerPolicy: 'strict-origin'
