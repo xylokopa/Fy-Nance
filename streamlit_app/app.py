@@ -1,4 +1,4 @@
-# fy-nance-app.streamlit.app.py update 20jul2026 535-Zeilen new-app_11Bootstrap_1.bak
+# fy-nance-app.streamlit.app.py update 20nov2026 535-Zeilen new-app_11Bootstrap_1.bak
 # ==============================================================================
 # TEIL 1: IMPORTE & PROJEKT-INITIALISIERUNG
 # ==============================================================================
