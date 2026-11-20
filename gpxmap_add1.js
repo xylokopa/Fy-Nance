@@ -22,18 +22,17 @@ JS.Map = function(makemap) {
 
 	// Map anlegen
 
-      const mycp = '<a href="https://xylokopa.github.io" title="gm">IO</a> | ';
+      const mycp = '<a href="https://xylokopa.github.io" title="gm">CP</a> | ';
+
+      const mygo = '<a href="https://xylokopa.github.io" title="gm">GO</a> | ';
+
+      const myot = '<a href="https://xylokopa.github.io" title="gm">OT</a> | ';
 
       this.baseLayers = {}; 
 
-      this.baseLayers["OSM"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
-          maxZoom: 19,
-          attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
-      });
-
       this.baseLayers["OSM"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	    maxZoom: 17,
-	    attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
+	    attribution: mycp + myot,
 	    referrerPolicy: 'strict-origin'
       });
 
@@ -81,10 +80,10 @@ JS.Map = function(makemap) {
 		});
 	}
 
-//	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer(JS.gpxmap.Path+"Icons/Grau256x256.png", { 
-//		maxZoom: 22,
-//		attribution: mycp,referrerPolicy: 'strict-origin'
-//	});
+	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer('https://www.google.com/maps/@,,5337m/data=!3m1!1e3', { 
+		maxZoom: 22,
+		attribution: mycp,referrerPolicy: 'strict-origin'
+	});
 
 //      this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
 //           maxZoom: 18,
@@ -92,12 +91,6 @@ JS.Map = function(makemap) {
 //           referrerPolicy: 'strict-origin'
 //      });
  
-	this.baseLayers["TopPlusOpen"] = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.png', {
-		maxZoom: 18,
-		attribution: mycp+'<a href="https://www.bkg.bund.de/SharedDocs/Produktinformationen/BKG/DE/P-2017/170922-TopPlus-Web-Open.html">BKG</a>',referrerPolicy: 'strict-origin'});
-
-
-
 	this.overlayLayers = {}; 
 
 //	this.overlayLayers["Open Sea"] = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
