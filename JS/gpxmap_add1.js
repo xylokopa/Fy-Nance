@@ -78,7 +78,8 @@ JS.Map = function(makemap) {
 
 	this.baseLayers[JS.gpxmap.strings[JS.gpxmap.parameters.doclang].noMap]= L.tileLayer(JS.gpxmap.Path+"Icons/Grau256x256.png", { 
 		maxZoom: 22,
-		attribution: mycp,referrerPolicy: 'strict-origin'
+                attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
+	        referrerPolicy: 'strict-origin'
 	});
 
 	this.overlayLayers = {}; 
