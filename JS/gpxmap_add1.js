@@ -32,6 +32,13 @@ JS.Map = function(makemap) {
 	    referrerPolicy: 'strict-origin'
       });
 
+      this.baseLayers["OSM"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	    maxZoom: 17,
+	    attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
+	    referrerPolicy: 'strict-origin'
+      });
+
+
 //      this.baseLayers["Satellit"] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
 //	    maxZoom: 18,
 //	    attribution: mycp+'<a href="https://esri.com">Esri</a>',
