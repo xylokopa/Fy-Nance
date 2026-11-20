@@ -1,4 +1,4 @@
-// gpxmap_add1_02.js  47.98874/7.85619
+// gpxmap_add1_03.js  47.98874/7.85619
 
 "use strict";
 //Alt: https://sgx.geodatenzentrum.de/wmts_topplus_open/...Neu: https://wheregroup.com{z}/{x}/{y}.png

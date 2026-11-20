@@ -1,4 +1,4 @@
-// gpxmap_add2.js
+// gpxmap_add2_02.js 20-11-26
 
 "use strict";
 
@@ -301,7 +301,7 @@ JS.gpxmap.strings.de = {
 	hideCurrentLocation: "Hide act.Pos.",
 	showTrafficLayer: "Show traffic",
 	hideTrafficLayer: "Hide traffic",
-	noMap: "No Map",
+	noMap: "32pix",
 	file: "Data",
 	showhide: "",
 	zoom: "",
