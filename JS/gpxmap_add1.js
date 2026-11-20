@@ -26,18 +26,16 @@ JS.Map = function(makemap) {
 
       this.baseLayers = {}; 
 
+      this.baseLayers["OSM"] = L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
+          maxZoom: 19,
+          attribution: mycp+'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors &copy; <a href="https://carto.com">CARTO</a>'
+      });
+
       this.baseLayers["OSM"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	    maxZoom: 17,
 	    attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
 	    referrerPolicy: 'strict-origin'
       });
-
-      this.baseLayers["OPT"] = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-	    maxZoom: 17,
-	    attribution: mycp+'<a href="https://opentopomap.org">OpenTopo</a>',
-	    referrerPolicy: 'strict-origin'
-      });
-
 
 //      this.baseLayers["Satellit"] = L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
 //	    maxZoom: 18,
