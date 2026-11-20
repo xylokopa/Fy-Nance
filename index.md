@@ -1,3 +1,5 @@
+[← Zurück zur Hauptseite](/)
+
 # 📈 Xylokopa's Github 
 Willkommen auf Xylokopa's Github-Website. Hier werden UNI-Projekte  
 Revue passiert, anstatt auf meiner Festplatte zu verstauben.
@@ -82,6 +84,8 @@ Hier kannst du die Flugdaten der darunter verlinkten videos in den Diagrammen mi
 <iframe src="Auswertung02.html" width="100%" height="700px" style="border: 1px solid #ccc; border-radius: 8px"></iframe>
 
 <center><iframe width="900" height="675" src="https://www.youtube-nocookie.com/embed/OXInR2Cl6a0" allow="autoplay"></iframe></center>
+
+[← Zurück zur Hauptseite](/)
 
 ---index_Fy_17-11-26.md...*
 
